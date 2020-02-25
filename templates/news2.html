@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="default">
+    <div class="page_header">
+        <h2 class="logo">MEDHOUSE</h2>
+        <div class="h_nav_container">
+            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>
+            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>
+        </div>
+    </div>
+    <div class="page_navigator">
+        <div class="nav-items">
+            <div class="nav-item">
+                <a href="index.html" class="link">
+                    Главная
+                </a>
+                <span class="nav-active d-none"></span>
+            </div>
+            <div class="nav-item">
+                <a href="analyse.html" class="link">
+                    Анализ
+                </a>
+                <span class="nav-active d-none"></span>
+            </div>
+            <div class="nav-item">
+                <a href="news.html" class="link">
+                    Новости
+                </a>
+                <span class="nav-active d-none"></span>
+            </div>
+            <div class="nav-item">
+                <a href="news.html" class="link active">
+                    Результаты
+                </a>
+                <span class="nav-active"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="article-header text-center mt-5">Прорыв в лечении гепертонии</h3>
+        <p class="text-read">
+            Раннее лечение повышенного давления безопасней и эффективней сразу двумя препаратами, нежели одним.
+            Результаты нового исследования, опубликованные в издании The Lancet, изменят метод лечения недуга, который
+            является основным фактором риска развития инфарктов и инсультов.
+            <br><br>
+            Изначально пациентам прописывают один препарат, а спустя месяцы — если потребуется — еще один добавочно.
+            <br><br>
+            Однако результаты нового исследования свидетельствуют, что лучше начинать лечение сразу двумя лекарствами
+            одновременно, поскольку такая стратегия может привести к более быстрому и эффективному контролю давления, с
+            меньшим количеством побочных эффектов.
+            <br><br>
+            Профессор Моррис Браун из Кембриджского университета сказал, что исследование ломает шаблонное лечение
+            гипертонии. «Большинству пациентов теперь можно прописать единственную комбинированную таблетку и знать, что
+            они надежно защищены от инсультов и инфарктов», сообщил он.
+            <br><br>
+            Профессор Брайен Уильямс из Британского общества гипертонии добавил, что результаты научной работы могут
+            изменить способ, с которым мы приближаемся в полному исцелению от гипертонии.
+            <br><br>
+            Всего в исследовании приняли участие 1250 пациентов с высоким кровяным давлением.
+            <br><br>
+            Выяснилось, что комбинация препаратов алискирена и амлодипина производит эффект на 25% лучший, чем каждый из
+            них по отдельности.
+            <br><br>
+            Ученые подозревают, что последовательный прием этих препаратов нейтрализует их отдельные эффекты, а прием
+            обоих вместе препятствует нейтрализации.
+        </p>
+    </div>
+    <div class="page_footer pd-section mt-5">
+        <div class="desc_container align-items-start">
+            <div>
+                <h5 class="text-white font-weight-bold">Информация</h5>
+                <div class="flex-column">
+                    <a href="#" class="d-block">Пользовательское соглашение</a>
+                    <a href="#" class="d-block">Политика конфиденциальности</a>
+                    <a href="#" class="d-block">Оферта</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-weight-bold">Контакты</h5>
+                <div class="flex-column">
+                    <a href="#" class="d-block">Вконтакте</a>
+                    <a href="#" class="d-block">Facebook</a>
+                    <a href="#" class="d-block">Instagram</a>
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-weight-bold">Адрес</h5>
+                <div class="flex-column">
+                    <p class="d-block address">ул. Кремлевская 35, г. Казань. РТ, РФ</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Sign In Modal -->
+<div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Войти</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body pt-0 pb-0">
+                <div class="form-group">
+                    <label class="lbl">Логин</label>
+                    <input type="text" class="form-control form-input username">
+                    <span class="msg-err d-none">Поле не может быть пустым</span>
+                </div>
+                <div class="form-group">
+                    <label class="lbl">Пароль</label>
+                    <input type="password" class="form-control form-input username">
+                    <span class="msg-err d-none">Поле не может быть пустым</span>
+                </div>
+            </div>
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-main" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-main btn-border-violet">Войти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Регистрация</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body pt-0 pb-0">
+                <div class="form-group">
+                    <label class="lbl">Имя</label>
+                    <input type="text" class="form-control form-input username">
+                    <span class="msg-err d-none">Поле не может быть пустым</span>
+                </div>
+                <div class="form-group">
+                    <label class="lbl">Фамилия</label>
+                    <input type="text" class="form-control form-input username">
+                    <span class="msg-err d-none">Поле не может быть пустым</span>
+                </div>
+                <div class="form-group">
+                    <label class="lbl">Email</label>
+                    <input type="email" class="form-control form-input" id="email">
+                    <span class="msg-err d-none">Неверный формат email</span>
+                </div>
+                <div class="form-group">
+                    <label class="lbl">Пароль</label>
+                    <input type="password" class="form-control form-input" id="password1">
+                </div>
+                <div class="form-group">
+                    <label class="lbl">Повторите пароль</label>
+                    <input type="password" class="form-control form-input" id="password2">
+                    <span class="msg-err d-none">Пароли не совпадают</span>
+                </div>
+            </div>
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-main" data-dismiss="modal">Отмена</button>
+                <button type="button" class="btn btn-main btn-border-violet">Зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/index.js"></script>
+</body>
+</html>
