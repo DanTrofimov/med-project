@@ -62,6 +62,10 @@ body {
 .landing .page_header .logo {
 }
 
+#logo_index {
+    padding-bottom: 27px;
+}
+
 .btn-main {
     border: 1px solid #757575;
     border-radius: 25px;
