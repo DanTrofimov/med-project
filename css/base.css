@@ -308,3 +308,11 @@ body {
     font-size: 16px;
 }
 
+/*some css*/
+#cab-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 36px;
+    line-height: 42px;
+}
+
