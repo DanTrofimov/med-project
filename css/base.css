@@ -1,3 +1,9 @@
+:root {
+    --text-backgrond-color: #8f8e99;
+    --backgrond-color: #fff;
+    --font-color: #4e555b;
+}
+
 body {
     background-color: #f6f6f6;
     /*font-family: 'Source Sans Pro', sans-serif;*/
@@ -25,7 +31,7 @@ body {
 }
 
 .landing {
-    background: url("../assets/bg.jpg");
+    /*background: url("../assets/bg.jpg");*/
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
@@ -50,8 +56,12 @@ body {
     align-items: center;
 }
 
+#page_header_index {
+    border-bottom: 1px solid lightgrey;
+}
+
 .page_footer {
-    background-color: #300f4f;
+    background-color: var(--text-backgrond-color);
 }
 
 /*#header_index {*/
@@ -152,7 +162,7 @@ body {
 
 .about-us_container {
     width: 100%;
-    padding: 40px 20px;
+    padding: 20px 20px;
     padding-bottom: 0;
 }
 
@@ -174,7 +184,7 @@ body {
 }
 
 .who-we-are_container {
-    background-color: #300f4f;
+    background-color: #8f8e99;
     font-size: 22px;
 }
 
@@ -203,7 +213,6 @@ body {
 .card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
-
 
 .card-img {
     border-top-left-radius: 7px;
@@ -316,3 +325,6 @@ body {
     line-height: 42px;
 }
 
+.d-block {
+    color: #fff;
+}
