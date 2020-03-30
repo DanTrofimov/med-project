@@ -325,12 +325,6 @@ body {
     line-height: 42px;
 }
 
-.nav-items {
-    /*border-bottom: 1px solid #4E555B;*/
-}
-
-.img-body {
-}
 
 .img-photo {
     margin-left: 536px;
@@ -379,4 +373,77 @@ body {
     border-radius: 20px;
     width: 344px;
     height: 60px;
+}
+.name_form {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    width: 218px;
+    height: 35px;
+}
+.page-item-name {
+    background-color: #E9E9EA;
+    border-radius: 10px;
+    width: 149px;
+    height: 39px;
+    /*margin-left: 135px;*/
+}
+.page-item-surname {
+    background-color: #E9E9EA;
+    border-radius: 10px;
+    width: 149px;
+    height: 39px;
+}
+#maket {
+    margin-left: 500px;
+    margin-top: 48px;
+}
+#maket2{
+    margin-left: 120px;
+    margin-top: 10px;
+}
+.name2_form {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    width: 154px;
+    height: 35px;
+    padding-left: 45px;
+}
+.name3_form {
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 26px;
+    width: 218px;
+    height: 35px;
+}
+.name4_form {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    padding-left: 45px;
+    width: 218px;
+    height: 36px;
+    padding-top: -5px;
+}
+.name5_form {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    padding-top: 45px;
+}
+.name6_form {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    margin-left: 850px;
+    display: inline-block;
+    margin-top: 20px;
+}
+.page-item-param {
+    background-color: #E9E9EA;
+    border-radius: 10px;
+    width: 149px;
+    height: 39px;
+    margin-left: 60px;
 }
