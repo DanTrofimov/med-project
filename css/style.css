@@ -280,7 +280,6 @@ body {
     margin-top: 22px;
     width: 275px;
     padding-right: 82px;
-    /*padding-bottom: 26px;*/
 }
 
 .page_header {
@@ -295,11 +294,8 @@ body {
 }
 
 #logo_index {
-    /*height: 53px;*/
-    /*width: 240px;*/
-    padding-left: 63px;
+    padding-left: 10px;
     padding-right: 100px;
-    /*padding-bottom: 20px;*/
     margin-top: 17px;
     font-weight: 500;
     font-size: 45px;
