@@ -28,11 +28,8 @@
     float: left;
 }
 
-/*.user {*/
-/*    display: flex;*/
-/*}*/
 .user {
-    height: 450px;
+    height: 500px;
     border-bottom: 1px solid lightgray;
 }
 

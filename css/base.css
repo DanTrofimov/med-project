@@ -307,10 +307,10 @@ body {
     font-size: 12px;
 }
 
-.animation {
-    overflow: hidden;
-    margin-left: 30px;
-}
+/*.animation {*/
+/*    overflow: hidden;*/
+/*    margin-left: 20px;*/
+/*}*/
 
 .address {
     color: #007bff;
