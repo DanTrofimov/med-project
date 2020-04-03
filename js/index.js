@@ -74,8 +74,8 @@ email.addEventListener('blur', function (e) {
 });
 
 
-var example = document.getElementById("example");
-var ctx = example.getContext("2d");
+// var example = document.getElementById("example");
+// var ctx = example.getContext("2d");
 function object(){
   ctx.beginPath();
   ctx.moveTo(30,50);
@@ -151,31 +151,31 @@ function object9(){
   ctx.closePath();
   ctx.stroke();
 }
-function animate () {
-  ctx.fillStyle="#f6f6f6";
-  ctx.fillRect(0,0,example.width,example.height);
-  setTimeout(object,50);
-  setTimeout(object1,150);
-  setTimeout(object2,200);
-  setTimeout(object3,250);
-  setTimeout(object4,300);
-  setTimeout(object5,350);
-  setTimeout(object6,400);
-  setTimeout(object7,450);
-  setTimeout(object8,500);
-  setTimeout(object9,550);
-}
-setInterval (animate,750);
+// function animate () {
+//   ctx.fillStyle="#f6f6f6";
+//   ctx.fillRect(0,0,example.width,example.height);
+//   setTimeout(object,50);
+//   setTimeout(object1,150);
+//   setTimeout(object2,200);
+//   setTimeout(object3,250);
+//   setTimeout(object4,300);
+//   setTimeout(object5,350);
+//   setTimeout(object6,400);
+//   setTimeout(object7,450);
+//   setTimeout(object8,500);
+//   setTimeout(object9,550);
+// }
+// setInterval (animate,750);
 
-
-var resultBtn = document.getElementById('result-button');
-resultBtn.addEventListener('click', function () {
-  var sistol = document.getElementById('sistol-presure').value;
-  if (sistol < 100) {
-    window.location = 'res_low.html'
-  } else if (sistol > 100 && sistol < 130) {
-    window.location = 'res_norm.html'
-  } else {
-    window.location = 'res_high.html'
-  }
-});
+//
+// var resultBtn = document.getElementById('result-button');
+// resultBtn.addEventListener('click', function () {
+//   var sistol = document.getElementById('sistol-presure').value;
+//   if (sistol < 100) {
+//     window.location = 'res_low';
+//   } else if (sistol > 100 && sistol < 130) {
+//     window.location = 'res_norm.html'
+//   } else {
+//     window.location = 'res_high.html'
+//   }
+// });
