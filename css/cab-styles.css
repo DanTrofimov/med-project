@@ -19,7 +19,6 @@
 }
 
 .img-place {
-    background-color: #fff;
     border-radius: 150px;
     width: 200px;
     height: 200px;
@@ -96,6 +95,26 @@
     background-color: #b4b9c2;
 }
 
+.pers-data {
+    width: 100px;
+    background-color: #e9e9ea;
+    border-radius: 10px;
+}
+
+#pers-Data {
+    width: 200px;
+}
+
+.inner-text {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.attention {
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+}
 /*----------*/
 
 /* Style The Dropdown Button */

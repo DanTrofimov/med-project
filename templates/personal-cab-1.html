@@ -10,129 +10,49 @@
     <title>Medhouse - личный кабинет</title>
 </head>
 <body>
-    <!--header-->
-    <div class="page_header" id="page_header_index">
-        <h2 class="logo" id="logo_index">MEDHOUSE</h2>
-        <div class="h_nav_container">
-            <p id="cab-text">личный кабинет</p>
+<!--header-->
+<div class="page_header" id="page_header_index">
+    <h2 class="logo" id="logo_index">MEDHOUSE</h2>
+    <div class="h_nav_container">
+        <p id="cab-text">личный кабинет</p>
+    </div>
+</div>
+<!--navigator-->
+<div class="page_navigator">
+    <div class="nav-items">
+        <div class="nav-item">
+            <a href="index.html" class="link">
+                главная
+            </a>
+            <span class="nav-active d-none"></span>
+        </div>
+        <div class="nav-item">
+            <a href="index.html" class="link active">
+                профиль
+            </a>
+            <span class="nav-active"></span>
+        </div>
+        <div class="nav-item">
+            <a href="analyse.html" class="link">
+                анализ
+            </a>
+            <span class="nav-active d-none"></span>
         </div>
     </div>
-    <!--navigator-->
-    <div class="page_navigator">
-        <div class="nav-items">
-            <div class="nav-item">
-                <a href="index.html" class="link">
-                    главная
-                </a>
-                <span class="nav-active d-none"></span>
-            </div>
-            <div class="nav-item">
-                <a href="index.html" class="link active">
-                    профиль
-                </a>
-                <span class="nav-active"></span>
-            </div>
-            <div class="nav-item">
-                <a href="analyse.html" class="link">
-                    анализ
-                </a>
-                <span class="nav-active d-none"></span>
-            </div>
+</div>
+<!--personal data-->
+<div class="my-container">
+    <div class="user">
+<!--        add description-->
+        <div class="img-place"><p class="inner-text"></p></div>
+        <div class="user-data">
+            <p class="attention">Чтобы продолжить, введите свои данные</p>
+            <input type="submit" value="Зарегистрироваться" class="btn btn-main btn-border-violet mt-4 w-100" id="result-button" style="margin-top: 50px" onClick="window.location='../templates/personal-cab-2.html'">
         </div>
     </div>
-    <!--personal data-->
-    <div class="my-container">
-        <div class="user">
-            <div class="img-place"></div>
-            <div class="user-data">
-                <div class="row1">
-                    <div class="name">
-                        <p>Имя</p>
-                        <p>username</p>
-                    </div>
-                    <div class="soname">
-                        <p>Фамилия</p>
-                        <p>usersoname</p>
-                    </div>
-                </div>
-                <div class="row2">
-                    <p>userdate</p>
-                </div>
-                <div class="row3">
-                    <p>Показатели:</p>
-                </div>
-                <div class="row4 row indicator">
-                    <p>Рост:</p>
-                    <p>userheight</p>
-                </div>
-                <div class="row5 row indicator">
-                    <p>Вес:</p>
-                    <p>userweight</p>
-                </div>
-                <div class="row6 row indicator">
-                    <p>Возраст:</p>
-                    <p>userage</p>
-                </div>
-                <div class="row7 row indicator">
-                    <p>Пол:</p>
-                    <p>usersex</p>
-                </div>
-                <div class="row8 row indicator">
-                    <p>Курение:</p>
-                    <p>true/false</p>
-                </div>
-            </div>
-        </div>
-        <div class="statistics">
-            <p class="stat-title">Статистика. Выберите показатели: </p>
-
-
-            <div class="dropdown">
-                <button class="dropbtn">показатели</button>
-                <div class="dropdown-content">
-                    <a href="#">Пульс</a>
-                    <a href="#">Частота дыхания</a>
-                    <a href="#">Давление</a>
-                </div>
-            </div>
-
-
-        </div>
-        <img style="padding-top: 15px" src="../assets/function.png" alt="">
-    </div>
-
-
-    <div class="page_footer pd-section">
-        <div class="desc_container align-items-start">
-            <div>
-                <h5 class="text-white font-weight-bold">Информация</h5>
-                <div class="flex-column">
-                    <a href="#" class="d-block">Пользовательское соглашение</a>
-                    <a href="#" class="d-block">Политика конфиденциальности</a>
-                    <a href="#" class="d-block">Оферта</a>
-                </div>
-            </div>
-            <div>
-                <h5 class="text-white font-weight-bold">Контакты</h5>
-                <div class="flex-column">
-                    <a href="#" class="d-block">Вконтакте</a>
-                    <a href="#" class="d-block">Facebook</a>
-                    <a href="#" class="d-block">Instagram</a>
-                </div>
-            </div>
-            <div>
-                <h5 class="text-white font-weight-bold">Адрес</h5>
-                <div class="flex-column">
-                    <p class="d-block address">ул. Кремлевская 35, г. Казань. РТ, РФ</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/cab.js"></script>
+</div>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/index.js"></script>
 </body>
 </html>
