@@ -35,6 +35,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     min-height: 100vh;
+    min-height: 100vh;
+    min-height: 100vh;
 }
 
 .pd-section {
@@ -77,6 +79,8 @@ body {
 
 #logo_index {
     padding-bottom: 2px;
+    height: 38px;
+    width: 173px;
 }
 
 .btn-main {
@@ -303,10 +307,10 @@ body {
     font-size: 12px;
 }
 
-.animation {
-    overflow: hidden;
-    margin-left: 30px;
-}
+/*.animation {*/
+/*    overflow: hidden;*/
+/*    margin-left: 20px;*/
+/*}*/
 
 .address {
     color: #007bff;
@@ -317,14 +321,11 @@ body {
     font-size: 16px;
 }
 
-/*some css*/
-#cab-text {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 36px;
-    line-height: 42px;
-}
-
 .d-block {
     color: #fff;
+}
+
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
 }
