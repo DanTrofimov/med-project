@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Medhouse - анализ</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/base.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="personal-cab-3.html" class="link">
+                <a href="personal-cab-1.html" class="link">
                     профиль
                 </a>
                 <span class="nav-active d-none"></span>
@@ -40,7 +40,9 @@
         </div>
     </div>
         <div class="container">
-            <form action="">
+
+                        <!--        ATTENTION onsubmit="return false;"  !!!-->
+            <form action="" onsubmit="return false;">
             <div class="analyse_form mt-5">
 <!--                <div class="animation">-->
 <!--                    <canvas height="150" width="1000" id="example">Обновите браузер</canvas>-->
@@ -56,15 +58,15 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Стаж курения:</span>
-                    <input type="number" class="form-control form-input item-control" id="smoking-exp" name="smoking-exp">
+                    <input type="number" placeholder="в годах" class="form-control form-input item-control" id="smoking-exp" name="smoking-exp">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Введите ваш вес:</span>
-                    <input type="number" class="form-control form-input item-control" id="weight" name="weight">
+                    <input type="number" placeholder="кг" class="form-control form-input item-control" id="weight" name="weight">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Введите ваш рост:</span>
-                    <input type="number" class="form-control form-input item-control" id="height" name="height">
+                    <input type="number" placeholder="cм" class="form-control form-input item-control" id="height" name="height">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Употребление алкоголя:</span>
@@ -79,11 +81,11 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Систолическое давление:</span>
-                    <input type="number" class="form-control form-input item-control" id="sistol-presure" name="sys">
+                    <input type="number" placeholder="мм рт.ст." class="form-control form-input item-control" id="sistol-presure" name="sys">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Диастолическое давление:</span>
-                    <input type="number" class="form-control form-input item-control" id="dist-presure" name="dias">
+                    <input type="number" placeholder="мм рт.ст." class="form-control form-input item-control" id="diast-presure" name="dias">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Температура:</span>
@@ -91,19 +93,19 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Пульс:</span>
-                    <input type="number" class="form-control form-input item-control" id="pulse" name="pulse">
+                    <input type="number" placeholder="уд. мин." class="form-control form-input item-control" id="pulse" name="pulse">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Сахар:</span>
-                    <input type="number" class="form-control form-input item-control" id="sugar" name="sugar">
+                    <input type="number" placeholder="ммоль/л" class="form-control form-input item-control" id="sugar" name="sugar">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Холестерин:</span>
-                    <input type="number" class="form-control form-input item-control" id="holest" name="holest">
+                    <input type="number" placeholder="ммоль/л" class="form-control form-input item-control" id="holest" name="holest">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Сон:</span>
-                    <input type="number" class="form-control form-input item-control" id="sleep" name="sleep">
+                    <input type="number" placeholder="в часах" class="form-control form-input item-control" id="sleep" name="sleep">
                 </div>
                 <div class="analyze_item_container_scroll">
                     <span class="item-title">Оцените ваш повседневный стресс:</span>
@@ -137,8 +139,7 @@
                     <option value="10" label="10">
                 </datalist>
                 </div>
-
-
+<!--                result-->
                 <button class="btn btn-main btn-border-violet mt-4 w-100" id="result-button">Показать рекомендации</button>
             </div>
         </form>
@@ -248,7 +249,7 @@
 
 <script src="../js/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
+<!--<script src="../js/index.js"></script>-->
 <script src="../js/analys.js"></script>
 </body>
 </html>
