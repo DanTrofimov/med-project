@@ -15,22 +15,26 @@ var smoking = localStorage.getItem("smoking"),
     IMT = (weight/ Math.pow(height/100, 2)).toFixed(1),
     // stub
     age = 28;
-    // ka, ks, km, x, y, R;
-    //
-    // if (age < 50) {
-    //     ks = 4;
-    //     ka = Math.floor(age/10) - 1;
-    //     km = 2;
-    // } else {
-    //     ks = 2;
-    //     ka = Math.floor(age/10);
-    //     km = 1.5;
-    // }
-    //
-    // x = Math.floor((sistol - 120)/40);
-    // y = Math.floor((holest - 4.14)/3.11);
-    //
-    // R = (x + y) * ka * ks * km;
+    gender = "м";
+
+let ka, ks, km, x, y, R;
+
+if (age < 50) {
+    ks = 4;
+    ka = Math.floor(age/10) - 1;
+    km = 2;
+} else {
+    ks = 2;
+    ka = Math.floor(age/10);
+    km = 1.5;
+}
+
+x = Math.floor((sistol - 120)/40);
+y = Math.floor((holest - 4.14)/3.11);
+
+if (gender === "м") {
+    R = (x + y) * ka * ks * km;
+} else  R = (x + y) * ka * ks;
 
 // statements
 // cause : statement
@@ -58,13 +62,11 @@ let statements = {
     "sugar-high" : "У Вас гипергликемия. Данный симптом может быть признаком сахарного диабета. Необходимо немедленно обратиться к врачу",
     "sugar-low" : "У Вас гипогликемия. Необходимо немедленно обратиться к врачу",
     "phis-low" : "У Вас слишком низкая физическая активность. Это может привести к увеличению массы тела, а также способствовать развитию различных заболеваний",
-    "rlow" : "Риск развития сердечно-сосудистых осложнений минимальный",
-    "rmedium" : "Имеется небольшой риск развития сердечно-сосудистых осложнений",
-    "rhigh" : "Имеется значительный риск развития сердечно-сосудистых осложнений. Обратитесь к врачу",
-    "rtoohigh" : "Имеется очень высокий риск развития сердечно-сосудистых осложнений. Обязательно обратитесь к врачу",
-    };
-
-// if ... обработка всех возможных случаев
+    "r-low" : "Риск развития сердечно-сосудистых осложнений минимальный",
+    "r-medium" : "Имеется небольшой риск развития сердечно-сосудистых осложнений",
+    "r-high" : "Имеется значительный риск развития сердечно-сосудистых осложнений. Обратитесь к врачу",
+    "r-too-high" : "Имеется очень высокий риск развития сердечно-сосудистых осложнений. Обязательно обратитесь к врачу",
+};
 
 // add DOM manipulation
 let diagnose = document.getElementById('diagnose');
@@ -72,11 +74,93 @@ let list = document.createElement('ul');
 list.style.paddingBottom = "260px";
 list.style.paddingTop = "30px";
 
-// test
-for (let item in statements) {
+// handling all possible cases
+if (smoking  && smoking_exp>10 && smoking_exp<20) {
+    addStatement(statements["smoking<20"]);
+}
+if (smoking && smoking_exp>20) {
+    addStatement(statements["smoking>20"])
+}
+if (IMT < 18.5) {
+    addStatement(statements["imt<18,5"])
+}
+if (IMT < 24.99 && IMT > 18,5) {
+    addStatement(statements["imt<25"])
+}
+if (IMT > 25) {
+    addStatement(statements["imt>25"])
+}
+if (smoking && alco === 5) {
+    addStatement(statements["alco-hight"])
+}
+if (smoking && alco === 4) {
+    addStatement(statements["alco-medium"])
+}
+if (smoking && (alco === 1 || alco === 2)) {
+    addStatement(statements["alco-low"])
+}
+if (sistol < 130 && sistol > 100) {
+    addStatement(statements["syst-medium"])
+}
+if ((sistol > 70 && sistol < 100) || (sistol > 130 || sistol < 160)) {
+    addStatement(statements["syst-unomal"])
+}
+if ((sistol < 70) || (sistol > 160)) {
+    addStatement(statements["syst-too-unormal"])
+}
+if (temp > 35.5 || temp < 37.0) {
+    addStatement(statements["temp-norm"])
+}
+if (temp <= 35.5) {
+    addStatement(statements["temp-low"])
+}
+if (temp >= 37) {
+    addStatement(statements["temp-high"])
+}
+if (pulse > 60 && pulse < 100) {
+    addStatement(statements["pulse-normal"])
+}
+if (pulse < 60) {
+    addStatement(statements["pulse-low"])
+}
+if (pulse > 100) {
+    addStatement(statements["pulsse-high"])
+}
+if (stress > 7 && sleep < 7) {
+    addStatement(statements["sleep-low"])
+}
+if (sleep < 5) {
+    addStatement(statements["sleep-too-low"])
+}
+if (sleep > 9) {
+    addStatement(statements["sleep-to-much"])
+}
+if (sugar > 5.5) {
+    addStatement(statements["sugar-high"])
+}
+if (sugar < 3.3) {
+    addStatement(statements["sugar-low"])
+}
+if (phis < 3) {
+    addStatement(statements["phis-low"])
+}
+if (R > 0 && R <= 10) {
+    addStatement(statements["r-low"])
+}
+if (R > 10 && R <= 16) {
+    addStatement(statements["r-medium"])
+}
+if (R > 16 && R <= 20) {
+    addStatement(statements["r-high"])
+}
+if (R > 20 && R <= 30) {
+    addStatement(statements["r-too-high"])
+}
+
+// add statement to the result-screen
+function addStatement(statement) {
     let elem = document.createElement('li');
-    elem.innerText = statements[item];
+    elem.innerText = statement;
     list.appendChild(elem);
     diagnose.appendChild(list);
 }
-

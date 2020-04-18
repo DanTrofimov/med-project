@@ -38,6 +38,14 @@
     font-size: 22px;
 }
 
+.user-data-first {
+    margin: auto;
+    padding-right: 10px;
+    font-size: 22px;
+    width: 400px;
+    text-align: center;
+}
+
 .row1, .row4, .row5, .row6, .row7 {
     display: flex;
 }
@@ -159,6 +167,7 @@
     background-color: #f1f1f1
 }
 
+/* Show the dropdown menu on hover */
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;

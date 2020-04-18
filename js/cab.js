@@ -21,3 +21,47 @@ function makeStraight() {
 }
 
 makeStraight();
+
+// validating
+
+function addClass(el, className) {
+    if (!el.classList.contains(className)) {
+        el.classList.add(className);
+    }
+}
+
+function rmClass(el, className) {
+    el.classList.remove(className);
+}
+
+var height = document.getElementById('height-cab');
+var weight = document.getElementById('weight-cab');
+var age = document.getElementById('age-cab');
+var gender = document.getElementById('gender-cab');
+var smoking = document.getElementById('smoking-cab')
+
+function validateDig(form, reg, max) {
+    form.addEventListener('blur', function (e) {
+        if (reg.test(e.target.value) && e.target.value > 0 && e.target.value < max) {
+            e.target.style.border = '2px solid lightgreen';
+        } else {
+            e.target.style.border = '2px solid red';
+        }
+    });
+}
+
+function validateStr(form, reg) {
+    form.addEventListener('blur', function (e) {
+        if (reg.test(e.target.value)) {
+            e.target.style.border = '2px solid lightgreen';
+        } else {
+            e.target.style.border = '2px solid red';
+        }
+    });
+}
+
+validateDig(height, /\d+/, 250);
+validateDig(weight, /\d+/, 150);
+validateDig(age, /\d+/, 100);
+validateStr(gender, /[м,ж]/i);
+validateStr(smoking, /да|нет/i);

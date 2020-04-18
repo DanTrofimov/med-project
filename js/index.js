@@ -5,10 +5,17 @@ function addClass(el, className) {
 }
 
 function rmClass(el, className) {
-  console.log(el);
   el.classList.remove(className);
 }
 
+var password1 = document.getElementById('password1');
+var password2 = document.getElementById('password2');
+var username = document.getElementById('username');
+var usersoname = document.getElementById('usersoname');
+var email = document.getElementById('email');
+var password2Checked = false;
+
+// validation
 var inputs = document.getElementsByClassName('username');
 for (var i = 0; i < inputs.length; i++) {
   var value = inputs[i];
@@ -18,15 +25,11 @@ for (var i = 0; i < inputs.length; i++) {
       addClass(e.target.nextElementSibling, 'd-none');
     } else {
       e.target.style.borderColor = 'red';
+      e.target.style.border = '4px';
       rmClass(e.target.nextElementSibling, 'd-none');
     }
   })
 }
-
-var password1 = document.getElementById('password1');
-var password2 = document.getElementById('password2');
-var password2Checked = false;
-
 
 password1.addEventListener('blur', function (e) {
   if (!e.target.value) {
@@ -60,8 +63,6 @@ password2.addEventListener('blur', function (e) {
   }
 });
 
-var email = document.getElementById('email');
-
 email.addEventListener('blur', function (e) {
   var regexp = /[0-9a-zA-Z]+@[0-9a-zA-Z]+\.[a-zA-Z]+/;
   if (regexp.test(e.target.value)) {
@@ -73,84 +74,105 @@ email.addEventListener('blur', function (e) {
   }
 });
 
+username.addEventListener('blur', function (e) {
+  var regexp = /[А-Я][а-я]+/;
+  if (regexp.test(e.target.value)) {
+    e.target.style.borderColor = 'green';
+    addClass(e.target.nextElementSibling, 'd-none');
+  } else {
+    e.target.style.borderColor = 'red';
+    rmClass(e.target.nextElementSibling, 'd-none');
+  }
+});
+
+usersoname.addEventListener('blur', function (e) {
+  var regexp = /[А-Я][а-я]+/;
+  if (regexp.test(e.target.value)) {
+    e.target.style.borderColor = 'green';
+    addClass(e.target.nextElementSibling, 'd-none');
+  } else {
+    e.target.style.borderColor = 'red';
+    rmClass(e.target.nextElementSibling, 'd-none');
+  }
+});
 
 // var example = document.getElementById("example");
 // var ctx = example.getContext("2d");
-function object(){
-  ctx.beginPath();
-  ctx.moveTo(30,50);
-  ctx.lineTo(75,50);
-  ctx.closePath();
-  ctx.stroke();
-}
-function object1(){
-  ctx.beginPath();
-  ctx.moveTo(75,50);
-  ctx.quadraticCurveTo(100,20,115,50);
-  ctx.stroke();
-  ctx.closePath();
-}
-function object2(){
-  ctx.beginPath();
-  ctx.moveTo(115,50);
-  ctx.lineTo(130,50);
-  ctx.closePath();
-  ctx.stroke();
-}
-function object3(){
-  ctx.beginPath();
-  ctx.moveTo(130,50);
-  ctx.lineTo(150,80);
-  ctx.closePath();
-  ctx.stroke();
-}
-function object4(){
-  ctx.beginPath();
-  ctx.moveTo(150,80);
-  ctx.lineTo(175,5);
-  ctx.closePath();
-  ctx.stroke();
-}
-
-function object5(){
-  ctx.beginPath();
-  ctx.moveTo(175,5);
-  ctx.lineTo(195,120);
-  ctx.closePath();
-  ctx.stroke();
-}
-
-function object6(){
-  ctx.beginPath();
-  ctx.moveTo(195,120);
-  ctx.lineTo(210,50);
-  ctx.closePath();
-  ctx.stroke();
-}
-
-function object7(){
-  ctx.beginPath();
-  ctx.moveTo(210,50);
-  ctx.lineTo(240,50);
-  ctx.closePath();
-  ctx.stroke();
-}
-
-function object8(){
-  ctx.beginPath();
-  ctx.moveTo(240,50);
-  ctx.quadraticCurveTo(270,5,300,50);
-  ctx.stroke();
-  ctx.closePath();
-}
-
-function object9(){
-  ctx.beginPath();
-  ctx.moveTo(300,50);
-  ctx.lineTo(320,50);
-  ctx.closePath();
-  ctx.stroke();
-}
+// function object(){
+//   ctx.beginPath();
+//   ctx.moveTo(30,50);
+//   ctx.lineTo(75,50);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+// function object1(){
+//   ctx.beginPath();
+//   ctx.moveTo(75,50);
+//   ctx.quadraticCurveTo(100,20,115,50);
+//   ctx.stroke();
+//   ctx.closePath();
+// }
+// function object2(){
+//   ctx.beginPath();
+//   ctx.moveTo(115,50);
+//   ctx.lineTo(130,50);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+// function object3(){
+//   ctx.beginPath();
+//   ctx.moveTo(130,50);
+//   ctx.lineTo(150,80);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+// function object4(){
+//   ctx.beginPath();
+//   ctx.moveTo(150,80);
+//   ctx.lineTo(175,5);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+//
+// function object5(){
+//   ctx.beginPath();
+//   ctx.moveTo(175,5);
+//   ctx.lineTo(195,120);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+//
+// function object6(){
+//   ctx.beginPath();
+//   ctx.moveTo(195,120);
+//   ctx.lineTo(210,50);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+//
+// function object7(){
+//   ctx.beginPath();
+//   ctx.moveTo(210,50);
+//   ctx.lineTo(240,50);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
+//
+// function object8(){
+//   ctx.beginPath();
+//   ctx.moveTo(240,50);
+//   ctx.quadraticCurveTo(270,5,300,50);
+//   ctx.stroke();
+//   ctx.closePath();
+// }
+//
+// function object9(){
+//   ctx.beginPath();
+//   ctx.moveTo(300,50);
+//   ctx.lineTo(320,50);
+//   ctx.closePath();
+//   ctx.stroke();
+// }
 // function animate () {
 //   ctx.fillStyle="#f6f6f6";
 //   ctx.fillRect(0,0,example.width,example.height);

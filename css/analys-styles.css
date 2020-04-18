@@ -34,3 +34,11 @@
     flex-basis: 0;
 
 }
+
+#cab-text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 42px;
+    padding-top: 10px;
+}

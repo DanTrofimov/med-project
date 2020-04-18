@@ -13,8 +13,7 @@
     <div class="page_header">
         <h2 class="logo">MEDHOUSE</h2>
         <div class="h_nav_container">
-            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>
-            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>
+            <p id="cab-text">анализ</p>
         </div>
     </div>
     <div class="page_navigator">
@@ -26,8 +25,8 @@
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="personal-cab-1.html" class="link">
-                    профиль
+                <a href="personal-cab-3.html" class="link">
+                    личный кабинет
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
@@ -50,7 +49,7 @@
                 <div><h3 class="text-center font-weight-bold" style="padding-bottom: 20px">username, введите ваши показания:</h3></div>
                 <div class="analyze_item_container" style="margin-top: 20px">
                     <span class="item-title">Курение:</span>
-                    <input type="text" list="optionsSmoke" class="form-control form-input item-control radio-inline" id="smoking" name="smoking">
+                    <input type="text" list="optionsSmoke" placeholder="выберите" class="form-control form-input item-control radio-inline" id="smoking" name="smoking">
                     <datalist id="optionsSmoke">
                         <option>Да</option>
                         <option>Нет</option>
@@ -70,7 +69,7 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Употребление алкоголя:</span>
-                    <input type="text" list="optionsAlc" class="form-control form-input item-control" id="alco" name="alco">
+                    <input type="text" list="optionsAlc" placeholder="выберите" class="form-control form-input item-control" id="alco" name="alco">
                     <datalist id="optionsAlc">
                         <option>Полный отказ</option>
                         <option>Несколько раз в год</option>
@@ -89,7 +88,7 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Температура:</span>
-                    <input type="number" placeholder="36,6" class="form-control form-input item-control" id="temperature" name="temperature">
+                    <input type="number" placeholder="°C" class="form-control form-input item-control" id="temperature" name="temperature">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Пульс:</span>
@@ -174,78 +173,78 @@
     </div>
 </div>
 
-<!-- Sign In Modal -->
-<div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <h5 class="modal-title">Войти</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body pt-0 pb-0">
-                <div class="form-group">
-                    <label class="lbl">Логин</label>
-                    <input type="text" class="form-control form-input username">
-                    <span class="msg-err d-none">Поле не может быть пустым</span>
-                </div>
-                <div class="form-group">
-                    <label class="lbl">Пароль</label>
-                    <input type="password" class="form-control form-input username">
-                    <span class="msg-err d-none">Поле не может быть пустым</span>
-                </div>
-            </div>
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-main" data-dismiss="modal">Отмена</button>
-                <button type="button" class="btn btn-main btn-border-violet">Войти</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--&lt;!&ndash; Sign In Modal &ndash;&gt;-->
+<!--<div class="modal fade" id="signinmodal" tabindex="-1" role="dialog" aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header border-0">-->
+<!--                <h5 class="modal-title">Войти</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body pt-0 pb-0">-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Логин</label>-->
+<!--                    <input type="text" class="form-control form-input username">-->
+<!--                    <span class="msg-err d-none">Поле не может быть пустым</span>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Пароль</label>-->
+<!--                    <input type="password" class="form-control form-input username">-->
+<!--                    <span class="msg-err d-none">Поле не может быть пустым</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="modal-footer border-top-0">-->
+<!--                <button type="button" class="btn btn-main" data-dismiss="modal">Отмена</button>-->
+<!--                <button type="button" class="btn btn-main btn-border-violet">Войти</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
-<div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header border-0">
-                <h5 class="modal-title">Регистрация</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body pt-0 pb-0">
-                <div class="form-group">
-                    <label class="lbl">Имя</label>
-                    <input type="text" class="form-control form-input username">
-                    <span class="msg-err d-none">Поле не может быть пустым</span>
-                </div>
-                <div class="form-group">
-                    <label class="lbl">Фамилия</label>
-                    <input type="text" class="form-control form-input username">
-                    <span class="msg-err d-none">Поле не может быть пустым</span>
-                </div>
-                <div class="form-group">
-                    <label class="lbl">Email</label>
-                    <input type="email" class="form-control form-input" id="email">
-                    <span class="msg-err d-none">Неверный формат email</span>
-                </div>
-                <div class="form-group">
-                    <label class="lbl">Пароль</label>
-                    <input type="password" class="form-control form-input" id="password1">
-                </div>
-                <div class="form-group">
-                    <label class="lbl">Повторите пароль</label>
-                    <input type="password" class="form-control form-input" id="password2">
-                    <span class="msg-err d-none">Пароли не совпадают</span>
-                </div>
-            </div>
-            <div class="modal-footer border-top-0">
-                <button type="button" class="btn btn-main" data-dismiss="modal">Отмена</button>
-                <button type="button" class="btn btn-main btn-border-violet">Зарегистрироваться</button>
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class="modal fade" id="signupmodal" tabindex="-1" role="dialog" aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered" role="document">-->
+<!--        <div class="modal-content">-->
+<!--            <div class="modal-header border-0">-->
+<!--                <h5 class="modal-title">Регистрация</h5>-->
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                    <span aria-hidden="true">&times;</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="modal-body pt-0 pb-0">-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Имя</label>-->
+<!--                    <input type="text" class="form-control form-input username">-->
+<!--                    <span class="msg-err d-none">Поле не может быть пустым</span>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Фамилия</label>-->
+<!--                    <input type="text" class="form-control form-input username">-->
+<!--                    <span class="msg-err d-none">Поле не может быть пустым</span>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Email</label>-->
+<!--                    <input type="email" class="form-control form-input" id="email">-->
+<!--                    <span class="msg-err d-none">Неверный формат email</span>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Пароль</label>-->
+<!--                    <input type="password" class="form-control form-input" id="password1">-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="lbl">Повторите пароль</label>-->
+<!--                    <input type="password" class="form-control form-input" id="password2">-->
+<!--                    <span class="msg-err d-none">Пароли не совпадают</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="modal-footer border-top-0">-->
+<!--                <button type="button" class="btn btn-main" data-dismiss="modal">Отмена</button>-->
+<!--                <button type="button" class="btn btn-main btn-border-violet">Зарегистрироваться</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <script src="../js/jquery.js"></script>
 <script src="../js/bootstrap.min.js"></script>
