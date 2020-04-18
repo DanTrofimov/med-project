@@ -114,7 +114,7 @@ validateDig(stress_in, /\d+/, 11, -1);
 validateDig(phis_in, /\d+/, 11, -1);
 
 // validating strings
-validateStr(input_alco_in, /Полный\sотказ|Несколько\sраз\sв\sгод|Кажный\sмесяц|Каждую\sнеделю|Ежедневно/);
+validateStr(input_alco_in, /Полный\sотказ|Несколько\sраз\sв\sгод|Каждый\sмесяц|Каждую\sнеделю|Ежедневно/);
 validateStr(smoking_in, /Да|Нет/);
 
 
