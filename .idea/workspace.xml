@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5eb55646-2013-4896-a8b6-5f4b211db582" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finmedproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/finmedproject/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/cab-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/cab-styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personal-cab-3-changedata.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-cab-3-changedata.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/personal-cab-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-cab-3.html" afterDir="false" />
-    </list>
+    <list default="true" id="5eb55646-2013-4896-a8b6-5f4b211db582" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +91,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/Projects/Programming/PyCharm_Projects/AnimeSite" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Projects/Programming/PyCharm_Projects/AnimeSite" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -156,11 +146,12 @@
       <workItem from="1587127534070" duration="1316000" />
       <workItem from="1587205781475" duration="22157000" />
       <workItem from="1587282842602" duration="10969000" />
+      <workItem from="1587321208155" duration="68000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />
