@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href="{% static "/css/base.css"%}" rel="stylesheet">
+    <link href="{% static "css/cab-styles.css" %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <title>Medhouse - личный кабинет</title>
+</head>
+<body>
+<!--header-->
+<div class="page_header" id="page_header_index">
+    <h2 class="logo" id="logo_index">MEDHOUSE</h2>
+    <div class="h_nav_container">
+        <p id="cab-text">личный кабинет</p>
+    </div>
+</div>
+<!--navigator-->
+<div class="page_navigator">
+    <div class="nav-items">
+        <div class="nav-item">
+            <a href="{% url 'home' %}" class="link">
+                главная
+            </a>
+            <span class="nav-active d-none"></span>
+        </div>
+        <div class="nav-item">
+            <a href="{% url 'personalcab' %}" class="link active">
+                профиль
+            </a>
+            <span class="nav-active"></span>
+        </div>
+        <div class="nav-item">
+            <a href="analyse.html" class="link">
+                анализ
+            </a>
+            <span class="nav-active d-none"></span>
+        </div>
+    </div>
+</div>
+<!--personal data-->
+<div class="my-container">
+    <div class="user">
+<!--        add description -->
+        <div class="img-place"><p class="inner-text"></p></div>
+        <div class="user-data">
+            <div class="row1">
+                <div class="name">
+                    <p>Имя</p>
+                    <label>
+                        <input type="text" placeholder="Имя" class="btn btn-black page-item-surname pers-data" value=""/>
+                    </label>
+                </div>
+                <div class="soname">
+                    <p>Фамилия</p>
+                    <label>
+                        <input type="text" placeholder="Фамилия" class="btn btn-black page-item-surname pers-data" value=""/>
+                    </label>
+                </div>
+            </div>
+            <div class="row3">
+                <p>Показатели:</p>
+            </div>
+            <div class="row4 row indicator">
+                <p>Рост:</p>
+                <label>
+                    <input type="text" placeholder="см" class="btn btn-black page-item-surname pers-data" value=""/>
+                </label>
+            </div>
+            <div class="row5 row indicator">
+                <p>Вес:</p>
+                <label>
+                    <input type="text" placeholder="кг" class="btn btn-black page-item-surname pers-data" value=""/>
+                </label>
+            </div>
+            <div class="row6 row indicator">
+                <p>Возраст:</p>
+                <label>
+                    <input type="text" placeholder="возраст" class="btn btn-black page-item-surname pers-data" value=""/>
+                </label>
+            </div>
+            <div class="row7 row indicator">
+                <p>Пол:</p>
+                <label>
+                    <input type="text" placeholder="м/ж" class="btn btn-black page-item-surname pers-data" value=""/>
+                </label>
+            </div>
+            <div class="row8 row indicator">
+                <p>Курение:</p>
+                <label>
+                    <input type="text" placeholder="да/нет" class="btn btn-black page-item-surname pers-data" value=""/>
+                </label>
+            </div>
+            <input type="submit" value="Сохранить" class="btn btn-main btn-border-violet mt-4 w-75" id="result-button" onClick="window.location='../templates/personal-cab-3.html'">
+        </div>
+    </div>
+</div>
+
+
+<div class="page_footer pd-section">
+    <div class="desc_container align-items-start">
+        <div>
+            <h5 class="text-white font-weight-bold">Информация</h5>
+            <div class="flex-column">
+                <a href="#" class="d-block">Пользовательское соглашение</a>
+                <a href="#" class="d-block">Политика конфиденциальности</a>
+                <a href="#" class="d-block">Оферта</a>
+            </div>
+        </div>
+        <div>
+            <h5 class="text-white font-weight-bold">Контакты</h5>
+            <div class="flex-column">
+                <a href="#" class="d-block">Вконтакте</a>
+                <a href="#" class="d-block">Facebook</a>
+                <a href="#" class="d-block">Instagram</a>
+            </div>
+        </div>
+        <div>
+            <h5 class="text-white font-weight-bold">Адрес</h5>
+            <div class="flex-column">
+                <p class="d-block address">ул. Кремлевская 35, г. Казань. РТ, РФ</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/index.js" %}"></script>
+<script src="{% static "js/cab.js" %} "></script>
+</body>
+</html>
