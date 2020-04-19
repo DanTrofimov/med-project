@@ -45,7 +45,16 @@
 <div class="my-container">
     <div class="user">
 <!--        add description -->
-        <div class="img-place"><p class="inner-text"></p></div>
+        <div class="user-img">
+            <div>
+                <img class="current-img" src="{{ user.employee.avatar.url }}" alt="avatar">
+            </div>
+            <div class="download">
+                <form enctype="multipart/form-data" method="post">
+                    <input type="file">
+                </form>
+            </div>
+        </div>
         <div class="user-data">
             <div class="row1">
                 <div class="name">
