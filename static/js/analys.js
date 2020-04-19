@@ -106,7 +106,7 @@ validateDig(height_in, /\d+/, 250, 100);
 validateDig(sistol_in, /\d+/, 200, 30);
 validateDig(diast_in, /\d+/, 200, 30);
 validateDig(temperature_in, /\d\d\.\d/, 42.0, 34.0);
-validateDig(pulse_in, /\d+/, 20, 250);
+validateDig(pulse_in, /\d+/, 250, 20);
 validateDig(sugar_in, /\d\.\d/, 20);
 validateDig(holest_in, /\d\.\d\d/, 10.00);
 validateDig(sleep_in, /\d+/, 24);

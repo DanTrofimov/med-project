@@ -60,8 +60,10 @@ function validateStr(form, reg) {
     });
 }
 
-validateDig(height, /\d+/, 250);
-validateDig(weight, /\d+/, 150);
-validateDig(age, /\d+/, 100);
-validateStr(gender, /[м,ж]/i);
-validateStr(smoking, /да|нет/i);
+if (height != null) validateDig(height, /\d+/, 250);
+if (weight != null)  validateDig(weight, /\d+/, 150);
+if (age != null)  validateDig(age, /\d+/, 100);
+if (gender != null) validateStr(gender, /[м,ж]/i);
+if (smoking != null)  validateStr(smoking, /да|нет/i);
+
+console.log('load')
