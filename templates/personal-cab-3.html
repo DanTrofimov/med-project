@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
-    <link href="../css/cab-styles.css" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href="{% static "/css/base.css"%}" rel="stylesheet">
+    <link href="{% static "css/cab-styles.css" %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <title>Medhouse - личный кабинет</title>
 </head>
@@ -21,14 +22,14 @@
     <div class="page_navigator">
         <div class="nav-items">
             <div class="nav-item">
-                <a href="index.html" class="link">
+                <a href="{% url 'home' %}" class="link">
                     главная
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="personal-cab-3.html" class="link active">
-                    личный кабинет
+                <a href="{% url 'personalcab' %}" class="link active">
+                    профиль
                 </a>
                 <span class="nav-active"></span>
             </div>
@@ -43,46 +44,47 @@
     <!--personal data-->
     <div class="my-container">
         <div class="user">
-            <div class="img-place"></div>
+            <img src="{{ user.employee.avatar.url }}" class="mr-3 img-fluid"
+                                 style="outline: none; cursor: inherit;">
             <div class="user-data">
                 <div class="row1">
                     <div class="name">
                         <p>Имя</p>
-                        <p>username</p>
+                        <p>{{user.employee.firstname}}</p>
                     </div>
                     <div class="soname">
                         <p>Фамилия</p>
-                        <p>usersoname</p>
+                        <p>{{user.employee.lastname}}</p>
                     </div>
                 </div>
-<!--                <div class="row2">-->
-<!--                    <p>userdate</p>-->
-<!--                </div>-->
+{#                <div class="row2">#}
+{#                    <p>{{ user.data_joined}}</p>#}
+{#                </div>#}
                 <div class="row3">
                     <p>Показатели:</p>
                 </div>
                 <div class="row4 row indicator">
                     <p>Рост:</p>
-                    <p>userheight</p>
+                    <p>{{user.employee.height}}</p>
                 </div>
                 <div class="row5 row indicator">
                     <p>Вес:</p>
-                    <p>userweight</p>
+                    <p>{{user.employee.weight}}</p>
                 </div>
                 <div class="row6 row indicator">
                     <p>Возраст:</p>
-                    <p>userage</p>
+                    <p>{{user.employee.age}}</p>
                 </div>
                 <div class="row7 row indicator">
                     <p>Пол:</p>
-                    <p>usergender</p>
+                    <p>{{user.employee.sex}}</p>
                 </div>
                 <div class="row8 row indicator">
                     <p>Курение:</p>
-                    <p>true/false</p>
+                    <p>{{user.employee.isSmoking}}</p>
                 </div>
                 <div>
-                    <input type="submit" value="Изменить данные" class="btn btn-main btn-border-violet mt-4 w-75" id="result-button" onClick="window.location='personal-cab-2.html'">
+                    <input type="submit" value="Изменить данные" class="btn btn-main btn-border-violet mt-4 w-75" id="result-button" onClick="window.location='personal-cab-3-changedata.html'">
                 </div>
             </div>
         </div>
@@ -133,9 +135,10 @@
     </div>
 
 
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
-<script src="../js/cab.js"></script>
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/index.js" %}"></script>
+<script src="{% static "js/cab.js" %} "></script>
+
 </body>
 </html>
