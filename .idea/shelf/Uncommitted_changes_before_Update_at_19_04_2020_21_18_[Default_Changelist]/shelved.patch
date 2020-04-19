@@ -1,0 +1,386 @@
+Index: static/css/cab-styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/*some css*/\r\n#cab-text {\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    font-size: 30px;\r\n    line-height: 42px;\r\n}\r\n\r\n.h_nav_container {\r\n    height: 43px;\r\n    width: 218px;\r\n}\r\n\r\n.my-container {\r\n    width: 600px;\r\n    margin: auto;\r\n    padding-top: 40px;\r\n    padding-bottom: 40px;\r\n}\r\n\r\n.img-place {\r\n    border-radius: 150px;\r\n    width: 200px;\r\n    height: 200px;\r\n    padding-top: 50px;\r\n    border: 2px solid #000000;\r\n    float: left;\r\n}\r\n\r\n.user {\r\n    height: 500px;\r\n    border-bottom: 1px solid lightgray;\r\n}\r\n\r\n.user-data {\r\n    float: right;\r\n    padding-right: 10px;\r\n    font-size: 22px;\r\n}\r\n\r\n.row1, .row4, .row5, .row6, .row7 {\r\n    display: flex;\r\n}\r\n\r\n.row2 {\r\n    padding-top: 15px;\r\n    font-weight: bold;\r\n}\r\n\r\n.row3 {\r\n    padding-top: 15px;\r\n}\r\n\r\n.user-data div:first-child {\r\n    padding-right: 50px;\r\n}\r\n\r\n.row p:first-child {\r\n    padding-right: 50px;\r\n}\r\n\r\n.row {\r\n    padding-left: 15px;\r\n}\r\n\r\n.row p:last-child {\r\n    font-weight: bold;\r\n}\r\n\r\n.name p:last-child {\r\n    font-weight: bold;\r\n}\r\n\r\n.soname p:last-child {\r\n    font-weight: bold;\r\n}\r\n\r\n.stat-title {\r\n    font-size: 22px;\r\n    text-align: center;\r\n}\r\n.statistics {\r\n    display: flex;\r\n    justify-content: center;\r\n    padding-top: 10px;\r\n}\r\n\r\n.statistics :last-child {\r\n    padding-left: 20px;\r\n}\r\n\r\n#dropdownMenuButton {\r\n    border-radius: 10px;\r\n    padding-bottom: 8px;\r\n    background-color: #b4b9c2;\r\n}\r\n\r\n.pers-data {\r\n    width: 100px;\r\n    background-color: #e9e9ea;\r\n    border-radius: 10px;\r\n}\r\n\r\n#pers-Data {\r\n    width: 200px;\r\n}\r\n\r\n.inner-text {\r\n    text-align: center;\r\n    padding-top: 20px;\r\n}\r\n\r\n.attention {\r\n    font-size: 15px;\r\n    margin-top: 20px;\r\n    font-weight: bold;\r\n}\r\n/*----------*/\r\n\r\n/* Style The Dropdown Button */\r\n.dropbtn {\r\n    background-color: #b4b9c2;\r\n    color: white;\r\n    padding: 7px;\r\n    padding-bottom: 9px;\r\n    font-size: 16px;\r\n    border: none;\r\n    cursor: pointer;\r\n    border-radius: 5px;\r\n}\r\n\r\n/* The container <div> - needed to position the dropdown content */\r\n.dropdown {\r\n    position: relative;\r\n    display: inline-block;\r\n}\r\n\r\n/* Dropdown Content (Hidden by Default) */\r\n.dropdown-content {\r\n    display: none;\r\n    position: absolute;\r\n    background-color: #f9f9f9;\r\n    min-width: 160px;\r\n    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);\r\n    z-index: 1;\r\n    padding-right: 15px;\r\n}\r\n\r\n/* Links inside the dropdown */\r\n.dropdown-content a {\r\n    color: black;\r\n    padding: 12px 16px;\r\n    text-decoration: none;\r\n    display: block;\r\n}\r\n\r\n/* Change color of dropdown links on hover */\r\n.dropdown-content a:hover {\r\n    background-color: #f1f1f1\r\n}\r\n\r\n/* Show the dropdown menu on hover */\r\n.dropdown:hover .dropdown-content {\r\n    display: block;\r\n}\r\n\r\n/* Change the background color of the dropdown button when the dropdown content is shown */\r\n.dropdown:hover .dropbtn {\r\n    background-color: #4e555b;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- static/css/cab-styles.css	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ static/css/cab-styles.css	(date 1587319415140)
+@@ -17,16 +17,28 @@
+     padding-top: 40px;
+     padding-bottom: 40px;
+ }
+-
+-.img-place {
++/*image*/
++.current-img {
+     border-radius: 150px;
+     width: 200px;
+     height: 200px;
+-    padding-top: 50px;
+     border: 2px solid #000000;
+     float: left;
+ }
+ 
++.download {
++    margin-top: 30px;
++    width: 100px;
++    font-size: 10px;;
++    float: left;
++}
++
++.user-img {
++    float: left;
++    width: 175px;
++    margin-left: 20px;
++}
++
+ .user {
+     height: 500px;
+     border-bottom: 1px solid lightgray;
+Index: templates/personal-cab-3-changedata.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n{% load static %}\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <link href=\"{% static \"css/bootstrap.min.css\"%}\" rel=\"stylesheet\">\r\n    <link href=\"{% static \"/css/base.css\"%}\" rel=\"stylesheet\">\r\n    <link href=\"{% static \"css/cab-styles.css\" %}\" rel=\"stylesheet\">\r\n    <link href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap\" rel=\"stylesheet\">\r\n    <title>Medhouse - личный кабинет</title>\r\n</head>\r\n<body>\r\n<!--header-->\r\n<div class=\"page_header\" id=\"page_header_index\">\r\n    <h2 class=\"logo\" id=\"logo_index\">MEDHOUSE</h2>\r\n    <div class=\"h_nav_container\">\r\n        <p id=\"cab-text\">личный кабинет</p>\r\n    </div>\r\n</div>\r\n<!--navigator-->\r\n<div class=\"page_navigator\">\r\n    <div class=\"nav-items\">\r\n        <div class=\"nav-item\">\r\n            <a href=\"{% url 'home' %}\" class=\"link\">\r\n                главная\r\n            </a>\r\n            <span class=\"nav-active d-none\"></span>\r\n        </div>\r\n        <div class=\"nav-item\">\r\n            <a href=\"{% url 'personalcab' %}\" class=\"link active\">\r\n                профиль\r\n            </a>\r\n            <span class=\"nav-active\"></span>\r\n        </div>\r\n        <div class=\"nav-item\">\r\n            <a href=\"analyse.html\" class=\"link\">\r\n                анализ\r\n            </a>\r\n            <span class=\"nav-active d-none\"></span>\r\n        </div>\r\n    </div>\r\n</div>\r\n<!--personal data-->\r\n<div class=\"my-container\">\r\n    <div class=\"user\">\r\n<!--        add description -->\r\n        <div class=\"img-place\"><p class=\"inner-text\"></p></div>\r\n        <div class=\"user-data\">\r\n            <div class=\"row1\">\r\n                <div class=\"name\">\r\n                    <p>Имя</p>\r\n                    <label>\r\n                        <input type=\"text\" placeholder=\"Имя\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                    </label>\r\n                </div>\r\n                <div class=\"soname\">\r\n                    <p>Фамилия</p>\r\n                    <label>\r\n                        <input type=\"text\" placeholder=\"Фамилия\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                    </label>\r\n                </div>\r\n            </div>\r\n            <div class=\"row3\">\r\n                <p>Показатели:</p>\r\n            </div>\r\n            <div class=\"row4 row indicator\">\r\n                <p>Рост:</p>\r\n                <label>\r\n                    <input type=\"text\" placeholder=\"см\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                </label>\r\n            </div>\r\n            <div class=\"row5 row indicator\">\r\n                <p>Вес:</p>\r\n                <label>\r\n                    <input type=\"text\" placeholder=\"кг\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                </label>\r\n            </div>\r\n            <div class=\"row6 row indicator\">\r\n                <p>Возраст:</p>\r\n                <label>\r\n                    <input type=\"text\" placeholder=\"возраст\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                </label>\r\n            </div>\r\n            <div class=\"row7 row indicator\">\r\n                <p>Пол:</p>\r\n                <label>\r\n                    <input type=\"text\" placeholder=\"м/ж\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                </label>\r\n            </div>\r\n            <div class=\"row8 row indicator\">\r\n                <p>Курение:</p>\r\n                <label>\r\n                    <input type=\"text\" placeholder=\"да/нет\" class=\"btn btn-black page-item-surname pers-data\" value=\"\"/>\r\n                </label>\r\n            </div>\r\n            <input type=\"submit\" value=\"Сохранить\" class=\"btn btn-main btn-border-violet mt-4 w-75\" id=\"result-button\" onClick=\"window.location='../templates/personal-cab-3.html'\">\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<div class=\"page_footer pd-section\">\r\n    <div class=\"desc_container align-items-start\">\r\n        <div>\r\n            <h5 class=\"text-white font-weight-bold\">Информация</h5>\r\n            <div class=\"flex-column\">\r\n                <a href=\"#\" class=\"d-block\">Пользовательское соглашение</a>\r\n                <a href=\"#\" class=\"d-block\">Политика конфиденциальности</a>\r\n                <a href=\"#\" class=\"d-block\">Оферта</a>\r\n            </div>\r\n        </div>\r\n        <div>\r\n            <h5 class=\"text-white font-weight-bold\">Контакты</h5>\r\n            <div class=\"flex-column\">\r\n                <a href=\"#\" class=\"d-block\">Вконтакте</a>\r\n                <a href=\"#\" class=\"d-block\">Facebook</a>\r\n                <a href=\"#\" class=\"d-block\">Instagram</a>\r\n            </div>\r\n        </div>\r\n        <div>\r\n            <h5 class=\"text-white font-weight-bold\">Адрес</h5>\r\n            <div class=\"flex-column\">\r\n                <p class=\"d-block address\">ул. Кремлевская 35, г. Казань. РТ, РФ</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n\r\n<script src=\"{% static \"js/jquery.js\" %}\"></script>\r\n<script src=\"{% static \"js/bootstrap.min.js\" %}\"></script>\r\n<script src=\"{% static \"js/index.js\" %}\"></script>\r\n<script src=\"{% static \"js/cab.js\" %} \"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/personal-cab-3-changedata.html	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ templates/personal-cab-3-changedata.html	(date 1587320178828)
+@@ -45,7 +45,16 @@
+ <div class="my-container">
+     <div class="user">
+ <!--        add description -->
+-        <div class="img-place"><p class="inner-text"></p></div>
++        <div class="user-img">
++            <div>
++                <img class="current-img" src="{{ user.employee.avatar.url }}" alt="avatar">
++            </div>
++            <div class="download">
++                <form enctype="multipart/form-data" method="post">
++                    <input type="file">
++                </form>
++            </div>
++        </div>
+         <div class="user-data">
+             <div class="row1">
+                 <div class="name">
+Index: templates/personal-cab-3.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n{% load static %}\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\r\n    <link href=\"{% static \"css/bootstrap.min.css\"%}\" rel=\"stylesheet\">\r\n    <link href=\"{% static \"/css/base.css\"%}\" rel=\"stylesheet\">\r\n    <link href=\"{% static \"css/cab-styles.css\" %}\" rel=\"stylesheet\">\r\n    <link href=\"https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap\" rel=\"stylesheet\">\r\n    <title>Medhouse - личный кабинет</title>\r\n</head>\r\n<body>\r\n    <!--header-->\r\n    <div class=\"page_header\" id=\"page_header_index\">\r\n        <h2 class=\"logo\" id=\"logo_index\">MEDHOUSE</h2>\r\n        <div class=\"h_nav_container\">\r\n            <p id=\"cab-text\">личный кабинет</p>\r\n        </div>\r\n    </div>\r\n    <!--navigator-->\r\n    <div class=\"page_navigator\">\r\n        <div class=\"nav-items\">\r\n            <div class=\"nav-item\">\r\n                <a href=\"{% url 'home' %}\" class=\"link\">\r\n                    главная\r\n                </a>\r\n                <span class=\"nav-active d-none\"></span>\r\n            </div>\r\n            <div class=\"nav-item\">\r\n                <a href=\"{% url 'personalcab' %}\" class=\"link active\">\r\n                    профиль\r\n                </a>\r\n                <span class=\"nav-active\"></span>\r\n            </div>\r\n            <div class=\"nav-item\">\r\n                <a href=\"analyse.html\" class=\"link\">\r\n                    анализ\r\n                </a>\r\n                <span class=\"nav-active d-none\"></span>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!--personal data-->\r\n    <div class=\"my-container\">\r\n        <div class=\"user\">\r\n            <img src=\"{{ user.employee.avatar.url }}\" class=\"mr-3 img-fluid\"\r\n                                 style=\"outline: none; cursor: inherit;\">\r\n            <div class=\"user-data\">\r\n                <div class=\"row1\">\r\n                    <div class=\"name\">\r\n                        <p>Имя</p>\r\n                        <p>{{user.employee.firstname}}</p>\r\n                    </div>\r\n                    <div class=\"soname\">\r\n                        <p>Фамилия</p>\r\n                        <p>{{user.employee.lastname}}</p>\r\n                    </div>\r\n                </div>\r\n{#                <div class=\"row2\">#}\r\n{#                    <p>{{ user.data_joined}}</p>#}\r\n{#                </div>#}\r\n                <div class=\"row3\">\r\n                    <p>Показатели:</p>\r\n                </div>\r\n                <div class=\"row4 row indicator\">\r\n                    <p>Рост:</p>\r\n                    <p>{{user.employee.height}}</p>\r\n                </div>\r\n                <div class=\"row5 row indicator\">\r\n                    <p>Вес:</p>\r\n                    <p>{{user.employee.weight}}</p>\r\n                </div>\r\n                <div class=\"row6 row indicator\">\r\n                    <p>Возраст:</p>\r\n                    <p>{{user.employee.age}}</p>\r\n                </div>\r\n                <div class=\"row7 row indicator\">\r\n                    <p>Пол:</p>\r\n                    <p>{{user.employee.sex}}</p>\r\n                </div>\r\n                <div class=\"row8 row indicator\">\r\n                    <p>Курение:</p>\r\n                    <p>{{user.employee.isSmoking}}</p>\r\n                </div>\r\n                <div>\r\n                    <input type=\"submit\" value=\"Изменить данные\" class=\"btn btn-main btn-border-violet mt-4 w-75\" id=\"result-button\" onClick=\"window.location='personal-cab-3-changedata.html'\">\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"statistics\">\r\n            <p class=\"stat-title\">Статистика. Выберите показатели: </p>\r\n\r\n\r\n            <div class=\"dropdown\">\r\n                <button class=\"dropbtn\">показатели</button>\r\n                <div class=\"dropdown-content\">\r\n                    <a href=\"#\">Пульс</a>\r\n                    <a href=\"#\">Частота дыхания</a>\r\n                    <a href=\"#\">Давление</a>\r\n                </div>\r\n            </div>\r\n\r\n\r\n        </div>\r\n        <img style=\"padding-top: 15px\" src=\"../assets/function.png\" alt=\"\">\r\n    </div>\r\n\r\n\r\n    <div class=\"page_footer pd-section\">\r\n        <div class=\"desc_container align-items-start\">\r\n            <div>\r\n                <h5 class=\"text-white font-weight-bold\">Информация</h5>\r\n                <div class=\"flex-column\">\r\n                    <a href=\"#\" class=\"d-block\">Пользовательское соглашение</a>\r\n                    <a href=\"#\" class=\"d-block\">Политика конфиденциальности</a>\r\n                    <a href=\"#\" class=\"d-block\">Оферта</a>\r\n                </div>\r\n            </div>\r\n            <div>\r\n                <h5 class=\"text-white font-weight-bold\">Контакты</h5>\r\n                <div class=\"flex-column\">\r\n                    <a href=\"#\" class=\"d-block\">Вконтакте</a>\r\n                    <a href=\"#\" class=\"d-block\">Facebook</a>\r\n                    <a href=\"#\" class=\"d-block\">Instagram</a>\r\n                </div>\r\n            </div>\r\n            <div>\r\n                <h5 class=\"text-white font-weight-bold\">Адрес</h5>\r\n                <div class=\"flex-column\">\r\n                    <p class=\"d-block address\">ул. Кремлевская 35, г. Казань. РТ, РФ</p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n\r\n<script src=\"{% static \"js/jquery.js\" %}\"></script>\r\n<script src=\"{% static \"js/bootstrap.min.js\" %}\"></script>\r\n<script src=\"{% static \"js/index.js\" %}\"></script>\r\n<script src=\"{% static \"js/cab.js\" %} \"></script>\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/personal-cab-3.html	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ templates/personal-cab-3.html	(date 1587320178852)
+@@ -5,7 +5,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+-    <link href="{% static "/css/base.css"%}" rel="stylesheet">
++    <link href="{% static "css/base.css"%}" rel="stylesheet">
+     <link href="{% static "css/cab-styles.css" %}" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+     <title>Medhouse - личный кабинет</title>
+@@ -44,8 +44,16 @@
+     <!--personal data-->
+     <div class="my-container">
+         <div class="user">
+-            <img src="{{ user.employee.avatar.url }}" class="mr-3 img-fluid"
+-                                 style="outline: none; cursor: inherit;">
++                <div class="user-img">
++                    <div>
++                        <img class="current-img" src="{{ user.employee.avatar.url }}" alt="avatar">
++                    </div>
++                    <div class="download">
++                        <form enctype="multipart/form-data" method="post">
++                            <input type="file">
++                        </form>
++                    </div>
++                </div>
+             <div class="user-data">
+                 <div class="row1">
+                     <div class="name">
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"dataSourceStorageLocal\">\r\n    <data-source name=\"db\" uuid=\"2cbd32f9-804d-4cd4-a433-9a5e88923899\">\r\n      <database-info product=\"SQLite\" version=\"3.25.1\" jdbc-version=\"2.1\" driver-name=\"SQLite JDBC\" driver-version=\"3.25.1\" dbms=\"SQLITE\" exact-version=\"3.25.1\" exact-driver-version=\"3.25\">\r\n        <identifier-quote-string>&quot;</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"mixed\" quoted-identifiers=\"mixed\" />\r\n      <auth-required>false</auth-required>\r\n      <schema-mapping />\r\n    </data-source>\r\n    <data-source name=\"db.sqlite3\" uuid=\"f34a1b8a-53e5-4163-80ac-578b1a7ddd8f\">\r\n      <database-info product=\"SQLite\" version=\"3.25.1\" jdbc-version=\"2.1\" driver-name=\"SQLite JDBC\" driver-version=\"3.25.1\" dbms=\"SQLITE\" exact-version=\"3.25.1\" exact-driver-version=\"3.25\">\r\n        <identifier-quote-string>&quot;</identifier-quote-string>\r\n      </database-info>\r\n      <case-sensitivity plain-identifiers=\"mixed\" quoted-identifiers=\"mixed\" />\r\n      <secret-storage>master_key</secret-storage>\r\n      <auth-required>false</auth-required>\r\n      <schema-mapping>\r\n        <introspection-scope>\r\n          <node kind=\"schema\" qname=\"@\" />\r\n        </introspection-scope>\r\n      </schema-mapping>\r\n    </data-source>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/dataSources.local.xml	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ .idea/dataSources.local.xml	(date 1587306875055)
+@@ -6,7 +6,7 @@
+         <identifier-quote-string>&quot;</identifier-quote-string>
+       </database-info>
+       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+-      <auth-required>false</auth-required>
++      <auth-provider>no-auth</auth-provider>
+       <schema-mapping />
+     </data-source>
+     <data-source name="db.sqlite3" uuid="f34a1b8a-53e5-4163-80ac-578b1a7ddd8f">
+@@ -15,7 +15,7 @@
+       </database-info>
+       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+       <secret-storage>master_key</secret-storage>
+-      <auth-required>false</auth-required>
++      <auth-provider>no-auth</auth-provider>
+       <schema-mapping>
+         <introspection-scope>
+           <node kind="schema" qname="@" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"JavaScriptSettings\">\r\n    <option name=\"languageLevel\" value=\"ES6\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.6 (finmedproject)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ .idea/misc.xml	(date 1587311979598)
+@@ -3,5 +3,5 @@
+   <component name="JavaScriptSettings">
+     <option name="languageLevel" value="ES6" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.6 (finmedproject)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (med-project)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(date 1587309559764)
++++ .idea/vcs.xml	(date 1587309559764)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5eb55646-2013-4896-a8b6-5f4b211db582\" name=\"Default Changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"DatabaseView\">\r\n    <option name=\"SHOW_INTERMEDIATE\" value=\"true\" />\r\n    <option name=\"GROUP_DATA_SOURCES\" value=\"true\" />\r\n    <option name=\"GROUP_SCHEMA\" value=\"true\" />\r\n    <option name=\"GROUP_CONTENTS\" value=\"false\" />\r\n    <option name=\"SORT_POSITIONED\" value=\"false\" />\r\n    <option name=\"SHOW_EMPTY_GROUPS\" value=\"false\" />\r\n    <option name=\"AUTO_SCROLL_FROM_SOURCE\" value=\"false\" />\r\n    <option name=\"HIDDEN_KINDS\">\r\n      <set />\r\n    </option>\r\n    <expand>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"db.sqlite3\" type=\"feb32156:DbDataSourceImpl\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"db.sqlite3\" type=\"feb32156:DbDataSourceImpl\" />\r\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"db.sqlite3\" type=\"feb32156:DbDataSourceImpl\" />\r\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\r\n        <item name=\"main: schema\" type=\"981a47c2:SqliteImplModel$Schema\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"db.sqlite3\" type=\"feb32156:DbDataSourceImpl\" />\r\n        <item name=\"schemas\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\r\n        <item name=\"main: schema\" type=\"981a47c2:SqliteImplModel$Schema\" />\r\n        <item name=\"auth_user: table\" type=\"3d80ac25:SqliteImplModel$Table\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"Database\" type=\"3277223f:DatabaseStructure$DbRootGroup\" />\r\n        <item name=\"db.sqlite3\" type=\"feb32156:DbDataSourceImpl\" />\r\n        <item name=\"collations\" type=\"d4e8921:DatabaseStructure$FamilyGroup\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"DjangoConsoleOptions\" custom-start-script=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\">\r\n    <option name=\"myCustomStartScript\" value=\"import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1a36f2o6E8LJeiUaYLnt4CtdE5v\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showExcludedFiles\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DatabaseDriversLRU\" value=\"sqlite\" />\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"D:/Projects/Programming/PyCharm_Projects/AnimeSite\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\Azat\\Desktop\\finmedproject\\static\\images\" />\r\n      <recent name=\"C:\\Users\\Azat\\Desktop\\finmedproject\\templates\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"finmedproject\" type=\"Python.DjangoServer\" factoryName=\"Django server\">\r\n      <module name=\"finmedproject\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n        <env name=\"DJANGO_SETTINGS_MODULE\" value=\"finmedproject.settings\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"false\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"launchJavascriptDebuger\" value=\"false\" />\r\n      <option name=\"port\" value=\"8000\" />\r\n      <option name=\"host\" value=\"\" />\r\n      <option name=\"additionalOptions\" value=\"\" />\r\n      <option name=\"browserUrl\" value=\"\" />\r\n      <option name=\"runTestServer\" value=\"false\" />\r\n      <option name=\"runNoReload\" value=\"false\" />\r\n      <option name=\"useCustomRunCommand\" value=\"false\" />\r\n      <option name=\"customRunCommand\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"5eb55646-2013-4896-a8b6-5f4b211db582\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1585952029842</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1585952029842</updated>\r\n      <workItem from=\"1585952111728\" duration=\"2213000\" />\r\n      <workItem from=\"1585954354807\" duration=\"422000\" />\r\n      <workItem from=\"1586004445730\" duration=\"1892000\" />\r\n      <workItem from=\"1586700340665\" duration=\"7000\" />\r\n      <workItem from=\"1586962345768\" duration=\"1528000\" />\r\n      <workItem from=\"1586965210725\" duration=\"35000\" />\r\n      <workItem from=\"1587022585151\" duration=\"3868000\" />\r\n      <workItem from=\"1587127534070\" duration=\"1316000\" />\r\n      <workItem from=\"1587205781475\" duration=\"22157000\" />\r\n      <workItem from=\"1587282842602\" duration=\"10969000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"1\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"233\" y=\"0\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog\" timestamp=\"1587025225767\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"233\" y=\"0\" key=\"#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680\" timestamp=\"1587025225767\" />\r\n    <state x=\"417\" y=\"144\" key=\"#com.intellij.fileTypes.FileTypeChooser\" timestamp=\"1585953613519\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"417\" y=\"144\" key=\"#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680\" timestamp=\"1585953613519\" />\r\n    <state x=\"371\" y=\"88\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1587296811078\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"371\" y=\"88\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680\" timestamp=\"1587296811078\" />\r\n    <state x=\"171\" y=\"0\" key=\"DBNavigator.ProjectSettingsDialog\" timestamp=\"1587025158786\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"171\" y=\"0\" key=\"DBNavigator.ProjectSettingsDialog/0.0.1280.680@0.0.1280.680\" timestamp=\"1587025158786\" />\r\n    <state x=\"421\" y=\"82\" key=\"FileChooserDialogImpl\" timestamp=\"1587299186131\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"421\" y=\"82\" key=\"FileChooserDialogImpl/0.0.1280.680@0.0.1280.680\" timestamp=\"1587299186131\" />\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.bottom\" timestamp=\"1587301568354\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680\" timestamp=\"1587301568354\" />\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.center\" timestamp=\"1587301568354\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680\" timestamp=\"1587301568354\" />\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.left\" timestamp=\"1587301568354\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680\" timestamp=\"1587301568354\" />\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.right\" timestamp=\"1587301568354\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"1237\" height=\"217\" key=\"GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680\" timestamp=\"1587301568354\" />\r\n    <state width=\"198\" height=\"457\" key=\"HiddenNamespacesPopup\" timestamp=\"1586962874882\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state width=\"198\" height=\"457\" key=\"HiddenNamespacesPopup/0.0.1280.680@0.0.1280.680\" timestamp=\"1586962874882\" />\r\n    <state x=\"142\" y=\"0\" key=\"SettingsEditor\" timestamp=\"1587025095767\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"142\" y=\"0\" key=\"SettingsEditor/0.0.1280.680@0.0.1280.680\" timestamp=\"1587025095767\" />\r\n    <state x=\"337\" y=\"165\" key=\"com.intellij.ide.util.TipDialog\" timestamp=\"1587282850531\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"337\" y=\"165\" key=\"com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680\" timestamp=\"1587282850531\" />\r\n    <state x=\"303\" y=\"1\" width=\"672\" height=\"678\" key=\"search.everywhere.popup\" timestamp=\"1587250940303\">\r\n      <screen x=\"0\" y=\"0\" width=\"1280\" height=\"680\" />\r\n    </state>\r\n    <state x=\"303\" y=\"1\" width=\"672\" height=\"678\" key=\"search.everywhere.popup/0.0.1280.680@0.0.1280.680\" timestamp=\"1587250940303\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ .idea/workspace.xml	(date 1587320184357)
+@@ -1,7 +1,36 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5eb55646-2013-4896-a8b6-5f4b211db582" name="Default Changelist" comment="" />
++    <list default="true" id="5eb55646-2013-4896-a8b6-5f4b211db582" name="Default Changelist" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/finmedproject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/finmedproject/urls.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/static/css/cab-styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/cab-styles.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/personal-cab-3-changedata.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-cab-3-changedata.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/personal-cab-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-cab-3.html" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -59,20 +88,29 @@
+         <option value="HTML File" />
+       </list>
+     </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectId" id="1a36f2o6E8LJeiUaYLnt4CtdE5v" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+-    <option name="showExcludedFiles" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+   <component name="PropertiesComponent">
+     <property name="DatabaseDriversLRU" value="sqlite" />
+     <property name="DefaultHtmlFileTemplate" value="HTML File" />
++    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
++    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="D:/Projects/Programming/PyCharm_Projects/AnimeSite" />
+-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
++    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+   </component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+@@ -91,7 +129,7 @@
+       </envs>
+       <option name="SDK_HOME" value="" />
+       <option name="WORKING_DIRECTORY" value="" />
+-      <option name="IS_MODULE_SDK" value="false" />
++      <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+       <option name="launchJavascriptDebuger" value="false" />
+@@ -126,17 +164,32 @@
+       <workItem from="1587127534070" duration="1316000" />
+       <workItem from="1587205781475" duration="22157000" />
+       <workItem from="1587282842602" duration="10969000" />
++      <workItem from="1587309505777" duration="2503000" />
++      <workItem from="1587312042051" duration="3520000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+-    <option name="version" value="1" />
++    <option name="version" value="2" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="oldMeFiltersMigrated" value="true" />
+   </component>
+   <component name="WindowStateProjectService">
+-    <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587025225767">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state x="256" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587310043460">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state x="233" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1587025225767" />
++    <state x="256" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587310043460" />
+     <state x="417" y="144" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585953613519">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+@@ -149,38 +202,52 @@
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+     <state x="171" y="0" key="DBNavigator.ProjectSettingsDialog/0.0.1280.680@0.0.1280.680" timestamp="1587025158786" />
+-    <state x="421" y="82" key="FileChooserDialogImpl" timestamp="1587299186131">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state x="394" y="152" key="FileChooserDialogImpl" timestamp="1587311726767">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state x="421" y="82" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587299186131" />
+-    <state width="1237" height="217" key="GridCell.Tab.0.bottom" timestamp="1587301568354">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state x="394" y="152" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587311726767" />
++    <state width="1493" height="603" key="GridCell.Tab.0.bottom" timestamp="1587319891973">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state width="1237" height="217" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587301568354" />
+-    <state width="1237" height="217" key="GridCell.Tab.0.center" timestamp="1587301568354">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state width="1493" height="603" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587319891973" />
++    <state width="1493" height="603" key="GridCell.Tab.0.center" timestamp="1587319891973">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state width="1237" height="217" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587301568354" />
+-    <state width="1237" height="217" key="GridCell.Tab.0.left" timestamp="1587301568354">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state width="1493" height="603" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587319891973" />
++    <state width="1493" height="603" key="GridCell.Tab.0.left" timestamp="1587319891972">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state width="1237" height="217" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587301568354" />
+-    <state width="1237" height="217" key="GridCell.Tab.0.right" timestamp="1587301568354">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state width="1493" height="603" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587319891972" />
++    <state width="1493" height="603" key="GridCell.Tab.0.right" timestamp="1587319891973">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state width="1237" height="217" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587301568354" />
++    <state width="1493" height="603" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587319891973" />
+     <state width="198" height="457" key="HiddenNamespacesPopup" timestamp="1586962874882">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+     <state width="198" height="457" key="HiddenNamespacesPopup/0.0.1280.680@0.0.1280.680" timestamp="1586962874882" />
+-    <state x="142" y="0" key="SettingsEditor" timestamp="1587025095767">
+-      <screen x="0" y="0" width="1280" height="680" />
++    <state x="294" y="71" key="SettingsEditor" timestamp="1587318491229">
++      <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587025095767" />
++    <state x="294" y="71" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587318491229" />
++    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1587320034477">
++      <screen x="0" y="0" width="1536" height="824" />
++    </state>
++    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1587320034477" />
+     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1587282850531">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+     <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1587282850531" />
++    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1587310111270">
++      <screen x="0" y="0" width="1536" height="824" />
++    </state>
++    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1587310111270" />
+     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1587250940303">
+       <screen x="0" y="0" width="1280" height="680" />
+     </state>
+Index: manage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#!/usr/bin/env python\r\n\"\"\"Django's command-line utility for administrative tasks.\"\"\"\r\nimport os\r\nimport sys\r\n\r\n\r\ndef main():\r\n    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'finmedproject.settings')\r\n    try:\r\n        from django.core.management import execute_from_command_line\r\n    except ImportError as exc:\r\n        raise ImportError(\r\n            \"Couldn't import Django. Are you sure it's installed and \"\r\n            \"available on your PYTHONPATH environment variable? Did you \"\r\n            \"forget to activate a virtual environment?\"\r\n        ) from exc\r\n    execute_from_command_line(sys.argv)\r\n\r\n\r\nif __name__ == '__main__':\r\n    main()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- manage.py	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ manage.py	(date 1587309011657)
+@@ -18,4 +18,4 @@
+ 
+ 
+ if __name__ == '__main__':
+-    main()
++    main()
+\ No newline at end of file
+Index: finmedproject/urls.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\"\"\"finmedproject URL Configuration\r\n\r\nThe `urlpatterns` list routes URLs to views. For more information please see:\r\n    https://docs.djangoproject.com/en/3.0/topics/http/urls/\r\nExamples:\r\nFunction views\r\n    1. Add an import:  from my_app import views\r\n    2. Add a URL to urlpatterns:  path('', views.home, name='home')\r\nClass-based views\r\n    1. Add an import:  from other_app.views import Home\r\n    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')\r\nIncluding another URLconf\r\n    1. Import the include() function: from django.urls import include, path\r\n    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))\r\n\"\"\"\r\nfrom django.contrib import admin\r\nfrom django.urls import include,path\r\n\r\nurlpatterns = [\r\n    path('admin/', admin.site.urls),\r\n    path('',include('home.urls'))\r\n]\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- finmedproject/urls.py	(revision a9105a7b4cecf9f18abcfd2014d80e2f4e920063)
++++ finmedproject/urls.py	(date 1587307839890)
+@@ -19,4 +19,4 @@
+ urlpatterns = [
+     path('admin/', admin.site.urls),
+     path('',include('home.urls'))
+-]
++]
+\ No newline at end of file
