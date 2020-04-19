@@ -60,6 +60,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1a36f2o6E8LJeiUaYLnt4CtdE5v" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -112,7 +115,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5eb55646-2013-4896-a8b6-5f4b211db582" name="Default Changelist" comment="" />
+      <changelist id="b7b62f1d-5b25-4b93-ba80-6462a516b049" name="Default Changelist" comment="" />
       <created>1585952029842</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -127,6 +130,7 @@
       <workItem from="1587127534070" duration="1316000" />
       <workItem from="1587205781475" duration="22157000" />
       <workItem from="1587282842602" duration="10969000" />
+      <workItem from="1587312589147" duration="61000" />
     </task>
     <servers />
   </component>
