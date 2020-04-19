@@ -1,38 +1,48 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Medhouse - анализ</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href="{% static "/css/base.css"%}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/analys-styles.css">
+    <link rel="stylesheet" href="{% static "css/analys-styles.css"%} ">
 </head>
+<style>
+    #hello_msg{
+        font-size: 18px;
+        color: #8A2BE2;
+        margin-right: 20px;
+    }
+</style>
 <body>
 <div class="default">
     <div class="page_header">
         <h2 class="logo">MEDHOUSE</h2>
         <div class="h_nav_container">
-            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>
-            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>
+              <span id="hello_msg">Привет , {{ request.user }}  </span>
+              <span ><a id="hello_msg" href="{% url 'logout' %}">Выход</a> </span>
+{#            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>#}
+{#            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>#}
         </div>
     </div>
     <div class="page_navigator">
         <div class="nav-items">
             <div class="nav-item">
-                <a href="index.html" class="link">
+                <a href="{% url 'home' %}" class="link">
                     главная
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="personal-cab-1.html" class="link">
+                <a href="{% url 'personalcab' %}" class="link">
                     профиль
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="analyse.html" class="link active">
+                <a href="{% url 'analyse' %}" class="link active">
                     анализ
                 </a>
                 <span class="nav-active"></span>
@@ -247,9 +257,9 @@
     </div>
 </div>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
 <!--<script src="../js/index.js"></script>-->
-<script src="../js/analys.js"></script>
+<script src="{% static "js/analys.js" %}"></script>
 </body>
 </html>
