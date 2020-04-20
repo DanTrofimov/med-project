@@ -60,13 +60,13 @@
                 <div class="name">
                     <p>Имя</p>
                     <label>
-                        <input type="text" placeholder="Имя" class="btn btn-black page-item-surname pers-data" value=""/>
+                        <input type="text" placeholder="Имя" id="name-cab" class="btn btn-black page-item-surname pers-data" value=""/>
                     </label>
                 </div>
                 <div class="soname">
                     <p>Фамилия</p>
                     <label>
-                        <input type="text" placeholder="Фамилия" class="btn btn-black page-item-surname pers-data" value=""/>
+                        <input type="text" placeholder="Фамилия" id="soname" style="width: 100px;" class="btn btn-black page-item-surname pers-data" value=""/>
                     </label>
                 </div>
             </div>
@@ -76,31 +76,31 @@
             <div class="row4 row indicator">
                 <p>Рост:</p>
                 <label>
-                    <input type="text" placeholder="см" class="btn btn-black page-item-surname pers-data" value=""/>
+                    <input type="number" placeholder="см" id="height-cab" class="btn btn-black page-item-surname pers-data" value=""/>
                 </label>
             </div>
             <div class="row5 row indicator">
                 <p>Вес:</p>
                 <label>
-                    <input type="text" placeholder="кг" class="btn btn-black page-item-surname pers-data" value=""/>
+                    <input type="number" placeholder="кг" id="weight-cab" class="btn btn-black page-item-surname pers-data" value=""/>
                 </label>
             </div>
             <div class="row6 row indicator">
                 <p>Возраст:</p>
                 <label>
-                    <input type="text" placeholder="возраст" class="btn btn-black page-item-surname pers-data" value=""/>
+                    <input type="number" placeholder="возраст" id="age-cab" class="btn btn-black page-item-surname pers-data" value=""/>
                 </label>
             </div>
             <div class="row7 row indicator">
                 <p>Пол:</p>
                 <label>
-                    <input type="text" placeholder="м/ж" class="btn btn-black page-item-surname pers-data" value=""/>
+                    <input type="text" placeholder="м/ж" id="gender-cab" class="btn btn-black page-item-surname pers-data" value=""/>
                 </label>
             </div>
             <div class="row8 row indicator">
                 <p>Курение:</p>
                 <label>
-                    <input type="text" placeholder="да/нет" class="btn btn-black page-item-surname pers-data" value=""/>
+                    <input type="text" placeholder="да/нет" id="smoking-cab" class="btn btn-black page-item-surname pers-data" value=""/>
                 </label>
             </div>
             <input type="submit" value="Сохранить" class="btn btn-main btn-border-violet mt-4 w-75" id="result-button" onClick="window.location='../templates/personal-cab-3.html'">
@@ -139,7 +139,7 @@
 
 <script src="{% static "js/jquery.js" %}"></script>
 <script src="{% static "js/bootstrap.min.js" %}"></script>
-<script src="{% static "js/index.js" %}"></script>
+{#<script src="{% static "js/index.js" %}"></script>#}
 <script src="{% static "js/cab.js" %} "></script>
 </body>
 </html>

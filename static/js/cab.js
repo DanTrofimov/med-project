@@ -1,4 +1,3 @@
-console.log('hello')
 function makeStraight() {
     let objects = document.getElementsByClassName("indicator");
     let gap = 50;
@@ -35,6 +34,8 @@ function rmClass(el, className) {
     el.classList.remove(className);
 }
 
+var name = document.getElementById('name-cab');
+var soname = document.getElementById('soname');
 var height = document.getElementById('height-cab');
 var weight = document.getElementById('weight-cab');
 var age = document.getElementById('age-cab');
@@ -61,8 +62,10 @@ function validateStr(form, reg) {
     });
 }
 
-if (height != null) validateDig(height, /\d+/, 250);
-if (weight != null)  validateDig(weight, /\d+/, 150);
-if (age != null)  validateDig(age, /\d+/, 100);
-if (gender != null) validateStr(gender, /[м,ж]/i);
-if (smoking != null)  validateStr(smoking, /да|нет/i);
+// validateStr(name, /[А-Я][а-я]+/);
+validateStr(soname, /[А-Я][а-я]+/);
+validateStr(gender, /м|ж/);
+validateDig(height, /\d+/, 250);
+validateDig(weight, /\d+/, 150);
+validateDig(age, /\d+/, 100);
+validateStr(smoking, /да|нет/i);
