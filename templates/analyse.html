@@ -60,7 +60,7 @@
                 <div><h3 class="text-center font-weight-bold" style="padding-bottom: 20px">username, введите ваши показания:</h3></div>
                 <div class="analyze_item_container" style="margin-top: 20px">
                     <span class="item-title">Курение:</span>
-                    <input type="text" placeholder="выберите" list="optionsSmoke" class="form-control form-input item-control radio-inline" id="smoking" name="smoking">
+                    <input type="text" value="{{ user.employee.isSmoking }}" placeholder="выберите" list="optionsSmoke" class="form-control form-input item-control radio-inline" id="smoking" name="smoking">
                     <datalist id="optionsSmoke">
                         <option>Да</option>
                         <option>Нет</option>
@@ -72,11 +72,11 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Введите ваш вес:</span>
-                    <input type="number" placeholder="кг" class="form-control form-input item-control" id="weight" name="weight">
+                    <input type="number" value="{{ user.employee.weight }}" placeholder="кг" class="form-control form-input item-control" id="weight" name="weight">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Введите ваш рост:</span>
-                    <input type="number" placeholder="cм" class="form-control form-input item-control" id="height" name="height">
+                    <input type="number" value="{{ user.employee.height }}"placeholder="cм" class="form-control form-input item-control" id="height" name="height">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Употребление алкоголя:</span>
