@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import CreateUserForm , EmployeeForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -65,7 +65,15 @@ def personalcab(request):
 
 @login_required(login_url='login')
 def personalcab_changedata(request):
-    return render(request, 'personal-cab-3-changedata.html')
+    employee = request.user.employee
+    form = EmployeeForm(instance=employee)
+
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST,request.FILES,instance=employee)
+        if form.is_valid():
+            form.save()
+    context = {'form':form}
+    return render(request, 'personal-cab-3-changedata.html',context)
 
 
 @login_required(login_url='login')
