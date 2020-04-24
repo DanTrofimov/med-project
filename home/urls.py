@@ -11,6 +11,6 @@ urlpatterns = [
     path('logout', views.logoutUser, name='logout'),
     path('personal-cab-3.html',views.personalcab,name='personalcab'),
     path('personal-cab-3-changedata.html',views.personalcab_changedata,name='changedata'),
-    path('analyse.html',views.analyse,name='analyse')
-
+    path('analyse.html',views.analyse,name='analyse'),
+    path('result.html',views.getresults,name='result')
 ]
