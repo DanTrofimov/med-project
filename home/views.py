@@ -79,3 +79,7 @@ def personalcab_changedata(request):
 @login_required(login_url='login')
 def analyse(request):
     return render(request, 'analyse.html')
+
+@login_required(login_url='login')
+def getresults(request):
+    return render(request,'results/result.html')
