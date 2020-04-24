@@ -52,7 +52,7 @@
                     <img class="current-img" src="{{ user.employee.avatar.url }}" alt="avatar">
                 </div>
                 <div class="download">
-                    {{ form.avatar }}
+                    <div>{{ form.avatar }}</div>
                 </div>
             </div>
 
@@ -77,23 +77,23 @@
                 </div>
                 <div class="row4 row indicator">
                     <p>Рост:</p>
-                    {{ form.height }}
+                    <div>{{ form.height }}</div>
                 </div>
                 <div class="row5 row indicator">
                     <p>Вес:</p>
-                    {{ form.weight }}
+                    <div>{{ form.weight }}</div>
                 </div>
                 <div class="row6 row indicator">
                     <p>Возраст:</p>
-                    {{ form.age }}
+                    <div>{{ form.age }}</div>
                 </div>
                 <div class="row7 row indicator">
                     <p>Пол:</p>
-                    {{ form.sex }}
+                    <div>{{ form.sex }}</div>
                 </div>
                 <div class="row8 row indicator">
                     <p>Курение:</p>
-                    {{ form.isSmoking }}
+                    <div>{{ form.isSmoking }}</div>
                 </div>
                 <input type="submit" value="Сохранить" class="btn btn-main btn-border-violet mt-4 w-75" id="result-button">
             </div>

@@ -57,7 +57,7 @@
 <!--                <div class="animation">-->
 <!--                    <canvas height="150" width="1000" id="example">Обновите браузер</canvas>-->
 <!--                </div>-->
-                <div><h3 class="text-center font-weight-bold" style="padding-bottom: 20px">username, введите ваши показания:</h3></div>
+                <div><h3 class="text-center font-weight-bold" style="padding-bottom: 20px">{{user.username}}, введите ваши показания:</h3></div>
                 <div class="analyze_item_container" style="margin-top: 20px">
                     <span class="item-title">Курение:</span>
                     <input type="text" value="{{ user.employee.isSmoking }}" placeholder="выберите" list="optionsSmoke" class="form-control form-input item-control radio-inline" id="smoking" name="smoking">
@@ -99,7 +99,7 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Температура:</span>
-                    <input type="number" placeholder="°C" class="form-control form-input item-control" id="temperature" name="temperature">
+                    <input type="number" placeholder="°C" step="0.1" class="form-control form-input item-control" id="temperature" name="temperature">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Пульс:</span>
@@ -107,11 +107,11 @@
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Сахар:</span>
-                    <input type="number" placeholder="ммоль/л" class="form-control form-input item-control" id="sugar" name="sugar">
+                    <input type="number" placeholder="ммоль/л" step="0.1" class="form-control form-input item-control" id="sugar" name="sugar">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Холестерин:</span>
-                    <input type="number" placeholder="ммоль/л" class="form-control form-input item-control" id="holest" name="holest">
+                    <input type="number" placeholder="ммоль/л" step="0.01" class="form-control form-input item-control" id="holest" name="holest">
                 </div>
                 <div class="analyze_item_container">
                     <span class="item-title">Сон:</span>

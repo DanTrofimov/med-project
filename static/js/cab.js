@@ -66,3 +66,4 @@ if (weight != null)  validateDig(weight, /\d+/, 150);
 if (age != null)  validateDig(age, /\d+/, 100);
 if (gender != null) validateStr(gender, /[м,ж]/i);
 if (smoking != null)  validateStr(smoking, /да|нет/i);
+

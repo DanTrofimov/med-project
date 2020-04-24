@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eb55646-2013-4896-a8b6-5f4b211db582" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/finmedproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/finmedproject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/cab.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/cab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/analyse.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/analyse.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/personal-cab-3-changedata.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/personal-cab-3-changedata.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,9 +184,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1587282850531" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1587413849076">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="364" y="1" width="807" height="822" key="search.everywhere.popup" timestamp="1587744694258">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1587413849076" />
+    <state x="364" y="1" width="807" height="822" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587744694258" />
   </component>
 </project>

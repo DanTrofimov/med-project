@@ -15,7 +15,7 @@ class EmployeeForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['user']
         widgets = {
-            'firstname': forms.TextInput(attrs={'class': 'btn btn-black page-item-surname pers-data'}),
+            'firstname': forms.TextInput(attrs={'class': 'btn btn-black page-item-surname pers-data', 'id':'firstname'}),
             'lastname': forms.TextInput(attrs={'class': 'btn btn-black page-item-surname pers-data'}),
             'height': forms.TextInput(attrs={'class': 'btn btn-black page-item-surname pers-data'}),
             'weight': forms.TextInput(attrs={'class': 'btn btn-black page-item-surname pers-data'}),
