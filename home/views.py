@@ -78,7 +78,9 @@ def personalcab_changedata(request):
 
 @login_required(login_url='login')
 def analyse(request):
+    employee = request.user.employee
     return render(request, 'analyse.html')
+
 
 @login_required(login_url='login')
 def getresults(request):

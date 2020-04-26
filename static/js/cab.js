@@ -1,4 +1,3 @@
-console.log('hello')
 function makeStraight() {
     let objects = document.getElementsByClassName("indicator");
     let gap = 50;
@@ -34,12 +33,13 @@ function addClass(el, className) {
 function rmClass(el, className) {
     el.classList.remove(className);
 }
-
-var height = document.getElementById('height-cab');
-var weight = document.getElementById('weight-cab');
-var age = document.getElementById('age-cab');
-var gender = document.getElementById('gender-cab');
-var smoking = document.getElementById('smoking-cab')
+var firstname = document.getElementById('firstname');
+var soname = document.getElementById('id_lastname');
+var height = document.getElementById('id_height');
+var weight = document.getElementById('id_weight');
+var age = document.getElementById('id_age');
+var gender = document.getElementById('id_sex');
+var smoking = document.getElementById('id_isSmoking');
 
 function validateDig(form, reg, max) {
     form.addEventListener('blur', function (e) {
@@ -63,7 +63,16 @@ function validateStr(form, reg) {
 
 if (height != null) validateDig(height, /\d+/, 250);
 if (weight != null)  validateDig(weight, /\d+/, 150);
-if (age != null)  validateDig(age, /\d+/, 100);
-if (gender != null) validateStr(gender, /[м,ж]/i);
+if (age != null) {
+    validateDig(age, /\d+/, 100);
+    localStorage.setItem("age", age.value);
+}
+if (gender != null) {
+    validateStr(gender, /[м,ж]/i);
+    localStorage.setItem("gender", gender.value);
+}
 if (smoking != null)  validateStr(smoking, /да|нет/i);
+if (soname != null) validateStr(soname, /[А-Я][а-я]+/);
+if (firstname != null) validateStr(firstname, /[А-Я][а-я]+/);
 
+console.log('hey')
