@@ -5,6 +5,7 @@ from .forms import CreateUserForm , EmployeeForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.template.context_processors import csrf
 
 
 @login_required(login_url='login')
@@ -72,16 +73,27 @@ def personalcab_changedata(request):
         form = EmployeeForm(request.POST,request.FILES,instance=employee)
         if form.is_valid():
             form.save()
+        employee.save()
     context = {'form':form}
-    return render(request, 'personal-cab-3-changedata.html',context)
+    return render(request, 'personal-cab-3-changedata.html', context)
 
 
 @login_required(login_url='login')
 def analyse(request):
-    employee = request.user.employee
     return render(request, 'analyse.html')
 
 
 @login_required(login_url='login')
 def getresults(request):
+    if request.method == 'POST':
+        employee = request.user.employee
+        employee.measurements_count += 1
+
+        employee.pulse = request.POST.get('pulse')
+        employee.list_of_pulse[employee.measurements_count] = employee.pulse
+        employee.sys_pressure = request.POST.get('sys')
+        employee.list_of_sys_pressure[employee.measurements_count] = employee.sys_pressure
+        employee.dias_pressure = request.POST.get('dias')
+        employee.list_of_dias_pressure[employee.measurements_count] = employee.dias_pressure
+        employee.save()
     return render(request,'results/result.html')
