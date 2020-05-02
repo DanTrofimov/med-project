@@ -52,11 +52,12 @@
         <div class="container">
 
                         <!--        ATTENTION onsubmit="return false;"  !!!-->
-            <form action="" onsubmit="return false;">
-            <div class="analyse_form mt-5">
-<!--                <div class="animation">-->
-<!--                    <canvas height="150" width="1000" id="example">Обновите браузер</canvas>-->
-<!--                </div>-->
+            <form method="POST" action="result.html">
+                {% csrf_token %}
+                <div class="analyse_form mt-5">
+                    <!--<div class="animation">-->
+                    <!--<canvas height="150" width="1000" id="example">Обновите браузер</canvas>-->
+                    <!--</div>-->
                 <div><h3 class="text-center font-weight-bold" style="padding-bottom: 20px">{{user.username}}, введите ваши показания:</h3></div>
                 <div class="analyze_item_container" style="margin-top: 20px">
                     <span class="item-title">Курение:</span>
@@ -149,7 +150,7 @@
                     <option value="10" label="10">  //onClick="window.location='personal-cab-3-changedata.html'
                 </datalist>
                 </div>
-<!--                result-->
+                <!--result-->
                 <button class="btn btn-main btn-border-violet mt-4 w-100" id="result-button" onClick="window.location='result.html'">Показать рекомендации</button>
             </div>
         </form>
