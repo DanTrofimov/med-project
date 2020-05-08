@@ -87,13 +87,26 @@ def analyse(request):
 def getresults(request):
     if request.method == 'POST':
         employee = request.user.employee
-        employee.measurements_count += 1
+        if (request.POST.get('pulse') != ''):
+            employee.pulse = request.POST.get('pulse')
+        if (request.POST.get('sys') != ''):
+            employee.sys_pressure = request.POST.get('sys')
+        if (request.POST.get('dias') != ''):
+            employee.dias_pressure = request.POST.get('dias')
 
-        employee.pulse = request.POST.get('pulse')
-        employee.list_of_pulse[employee.measurements_count] = employee.pulse
-        employee.sys_pressure = request.POST.get('sys')
-        employee.list_of_sys_pressure[employee.measurements_count] = employee.sys_pressure
-        employee.dias_pressure = request.POST.get('dias')
-        employee.list_of_dias_pressure[employee.measurements_count] = employee.dias_pressure
+        for i in range(0, 4):
+            if (request.POST.get('pulse') != ''):
+                employee.list_of_pulse[i] = employee.list_of_pulse[i + 1]
+            if (request.POST.get('sys') != ''):
+                employee.list_of_sys_pressure[i] = employee.list_of_sys_pressure[i + 1]
+            if (request.POST.get('dias') != ''):
+                employee.list_of_dias_pressure[i] = employee.list_of_dias_pressure[i + 1]
+        if (request.POST.get('pulse') != ''):
+            employee.list_of_pulse[4] = employee.pulse
+        if (request.POST.get('sys') != ''):
+            employee.list_of_sys_pressure[4] = employee.sys_pressure
+        if (request.POST.get('dias') != ''):
+            employee.list_of_dias_pressure[4] = employee.dias_pressure
+        employee.measurements_count += 1
         employee.save()
     return render(request,'results/result.html')

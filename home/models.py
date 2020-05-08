@@ -16,8 +16,8 @@ class Employee(models.Model):
     measurements_count = models.PositiveSmallIntegerField('Количество анализов', default='0')
 
     pulse = models.PositiveSmallIntegerField('Текущий пульс', null=True, default='0')
-    list_of_pulse = {}
+    list_of_pulse = [0]*5
     sys_pressure = models.PositiveSmallIntegerField('Текущее систолическое давление', null=True, default='0')
-    list_of_sys_pressure = {}
+    list_of_sys_pressure = [0]*5
     dias_pressure = models.PositiveSmallIntegerField('Текущее диастолическое давление', null=True, default='0')
-    list_of_dias_pressure = {}
+    list_of_dias_pressure = [0]*5
