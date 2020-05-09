@@ -63,7 +63,29 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def personalcab(request):
-    return render(request, 'personal-cab-3.html')
+
+    employee = request.user.employee
+    x1_data = [1, 2, 3, 4, 5]
+    y1_data = employee.list_of_pulse
+    graph_pulse = plot([Scatter(x=x1_data, y=y1_data,
+                                mode='lines', name='test',
+                                opacity=0.8, marker_color='green')],
+                       output_type='div')
+    x2_data = [1, 2, 3, 4, 5]
+    y2_data = employee.list_of_sys_pressure
+    graphSysPressure = plot([Scatter(x=x2_data, y=y2_data,
+                                     mode='lines', name='test',
+                                     opacity=0.8, marker_color='green')],
+                            output_type='div')
+    x3_data = [1, 2, 3, 4, 5]
+    y3_data = employee.list_of_dias_pressure
+    graphDiasPressure = plot([Scatter(x=x3_data, y=y3_data,
+                                      mode='lines', name='test',
+                                      opacity=0.8, marker_color='green')],
+                             output_type='div')
+
+    return render(request, 'personal-cab-3.html', context={'getGraph_pulse': graph_pulse,'getGraph_sysPressure': graphSysPressure,
+                                                           'getGraph_diasPressure': graphDiasPressure})
 
 
 @login_required(login_url='login')
@@ -112,36 +134,3 @@ def getresults(request):
         employee.measurements_count += 1
         employee.save()
     return render(request, 'results/result.html')
-
-
-def graphPulse(request):
-    employee = request.user.employee
-    x_data = [1, 2, 3, 4, 5]
-    y_data = employee.list_of_pulse
-    graph_pulse = plot([Scatter(x=x_data, y=y_data,
-                             mode='lines', name='test',
-                             opacity=0.8, marker_color='green')],
-                    output_type='div')
-    return render(request, "personal-cab-3.html", context={'getGraph_pulse': graph_pulse})
-
-
-def graphSysPressure(request):
-    employee = request.user.employee
-    x_data = [1, 2, 3, 4, 5]
-    y_data = employee.list_of_sys_pressure
-    plot_div = plot([Scatter(x=x_data, y=y_data,
-                             mode='lines', name='test',
-                             opacity=0.8, marker_color='green')],
-                    output_type='div')
-    return render(request, "personal-cab-3.html", context={'getGraph_sysPressure': plot_div})
-
-
-def graphSysPressure(request):
-    employee = request.user.employee
-    x_data = [1, 2, 3, 4, 5]
-    y_data = employee.list_of_dias_pressure
-    plot_div = plot([Scatter(x=x_data, y=y_data,
-                             mode='lines', name='test',
-                             opacity=0.8, marker_color='green')],
-                    output_type='div')
-    return render(request, "personal-cab-3.html", context={'getGraph_diasPressure': plot_div})
