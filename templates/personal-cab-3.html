@@ -92,41 +92,32 @@
             </div>
         </div>
         <div class="statistics">
-            <p class="stat-title">Статистика. Выберите показатели: </p>
+            <p class="stat-title">Статистика показателей:</p>
+        </div>
 
 
-            <div class="dropdown">
-                <button class="dropbtn">показатели</button>
-                <div class="dropdown-content">
-                    <a href="#">Пульс</a>
-                    <a href="#">Частота дыхания</a>
-                    <a href="#">Давление</a>
-                </div>
+            {# PULSE PLOT #}
+            <div>
+                 <p class="stat-title">Пульс:</p>
+                {% autoescape off %}
+                {{ getGraph_pulse }}
+                {% endautoescape %}
+            </div>
+            {# SYSTOL PLOT #}
+            <div>
+                <p class="stat-title">Систолическое давление:</p>
+                {% autoescape off %}
+                {{ getGraph_sysPressure }}
+                {% endautoescape %}
+            </div>
+            {# DIAST PLOT #}
+            <div>
+            <p class="stat-title">Диастолическое давление:</p>
+                {% autoescape off %}
+                {{ getGraph_diasPressure }}
+                {% endautoescape %}
             </div>
 
-
-        </div>
-
-        {# PULSE PLOT       #}
-        <div>
-            {% autoescape off %}
-            {{ getGraph_pulse }}
-            {% endautoescape %}
-        </div>
-
-        {# PULSE PLOT       #}
-        <div>
-            {% autoescape off %}
-            {{ getGraph_sysPressure }}
-            {% endautoescape %}
-        </div>
-
-        {# PULSE PLOT       #}
-        <div>
-            {% autoescape off %}
-            {{ getGraph_diasPressure }}
-            {% endautoescape %}
-        </div>
 
         <img style="padding-top: 15px" src="../assets/function.png" alt="">
     </div>

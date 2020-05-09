@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.template.context_processors import csrf
 from plotly.offline import plot
 from plotly.graph_objs import Scatter
-
+import plotly.graph_objects as go
 
 @login_required(login_url='login')
 def home(request):
@@ -60,7 +60,6 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
-
 @login_required(login_url='login')
 def personalcab(request):
 
@@ -86,7 +85,6 @@ def personalcab(request):
 
     return render(request, 'personal-cab-3.html', context={'getGraph_pulse': graph_pulse,'getGraph_sysPressure': graphSysPressure,
                                                            'getGraph_diasPressure': graphDiasPressure})
-
 
 @login_required(login_url='login')
 def personalcab_changedata(request):
