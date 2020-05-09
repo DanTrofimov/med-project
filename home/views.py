@@ -69,7 +69,7 @@ def personalcab(request):
                                 mode='lines', name='test',
                                 opacity=0.8, marker_color='green')],
                        output_type='div')
-
+    
     x2_data = [1, 2, 3, 4, 5]
     y2_data = employee.list_of_sys_pressure
     graphSysPressure = plot([Scatter(x=x2_data, y=y2_data,
