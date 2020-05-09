@@ -8,7 +8,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.template.context_processors import csrf
 from plotly.offline import plot
 from plotly.graph_objs import Scatter
-import plotly.graph_objects as go
 
 @login_required(login_url='login')
 def home(request):
@@ -70,12 +69,14 @@ def personalcab(request):
                                 mode='lines', name='test',
                                 opacity=0.8, marker_color='green')],
                        output_type='div')
+
     x2_data = [1, 2, 3, 4, 5]
     y2_data = employee.list_of_sys_pressure
     graphSysPressure = plot([Scatter(x=x2_data, y=y2_data,
                                      mode='lines', name='test',
                                      opacity=0.8, marker_color='green')],
                             output_type='div')
+
     x3_data = [1, 2, 3, 4, 5]
     y3_data = employee.list_of_dias_pressure
     graphDiasPressure = plot([Scatter(x=x3_data, y=y3_data,
