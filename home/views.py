@@ -1,11 +1,13 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm , EmployeeForm
+from .forms import CreateUserForm, EmployeeForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.template.context_processors import csrf
+from plotly.offline import plot
+from plotly.graph_objs import Scatter
 
 
 @login_required(login_url='login')
@@ -70,11 +72,11 @@ def personalcab_changedata(request):
     form = EmployeeForm(instance=employee)
 
     if request.method == 'POST':
-        form = EmployeeForm(request.POST,request.FILES,instance=employee)
+        form = EmployeeForm(request.POST, request.FILES, instance=employee)
         if form.is_valid():
             form.save()
         employee.save()
-    context = {'form':form}
+    context = {'form': form}
     return render(request, 'personal-cab-3-changedata.html', context)
 
 
@@ -109,4 +111,37 @@ def getresults(request):
             employee.list_of_dias_pressure[4] = employee.dias_pressure
         employee.measurements_count += 1
         employee.save()
-    return render(request,'results/result.html')
+    return render(request, 'results/result.html')
+
+
+def graphPulse(request):
+    employee = request.user.employee
+    x_data = [1, 2, 3, 4, 5]
+    y_data = employee.list_of_pulse
+    graph_pulse = plot([Scatter(x=x_data, y=y_data,
+                             mode='lines', name='test',
+                             opacity=0.8, marker_color='green')],
+                    output_type='div')
+    return render(request, "personal-cab-3.html", context={'getGraph_pulse': graph_pulse})
+
+
+def graphSysPressure(request):
+    employee = request.user.employee
+    x_data = [1, 2, 3, 4, 5]
+    y_data = employee.list_of_sys_pressure
+    plot_div = plot([Scatter(x=x_data, y=y_data,
+                             mode='lines', name='test',
+                             opacity=0.8, marker_color='green')],
+                    output_type='div')
+    return render(request, "personal-cab-3.html", context={'getGraph_sysPressure': plot_div})
+
+
+def graphSysPressure(request):
+    employee = request.user.employee
+    x_data = [1, 2, 3, 4, 5]
+    y_data = employee.list_of_dias_pressure
+    plot_div = plot([Scatter(x=x_data, y=y_data,
+                             mode='lines', name='test',
+                             opacity=0.8, marker_color='green')],
+                    output_type='div')
+    return render(request, "personal-cab-3.html", context={'getGraph_diasPressure': plot_div})
