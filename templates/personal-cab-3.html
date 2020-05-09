@@ -106,6 +106,28 @@
 
 
         </div>
+
+        {# PULSE PLOT       #}
+        <div>
+            {% autoescape off %}
+            {{ getGraph_pulse }}
+            {% endautoescape %}
+        </div>
+
+        {# PULSE PLOT       #}
+        <div>
+            {% autoescape off %}
+            {{ getGraph_sysPressure }}
+            {% endautoescape %}
+        </div>
+
+        {# PULSE PLOT       #}
+        <div>
+            {% autoescape off %}
+            {{ getGraph_diasPressure }}
+            {% endautoescape %}
+        </div>
+
         <img style="padding-top: 15px" src="../assets/function.png" alt="">
     </div>
 
