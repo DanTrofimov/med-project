@@ -13,11 +13,10 @@ class Employee(models.Model):
     sex = models.CharField("Пол",max_length=15 ,default='муж')
     isSmoking = models.CharField("Курение",max_length=5,default='нет')
 
-    measurements_count = models.PositiveSmallIntegerField('Количество анализов', default='0')
-
-    pulse = models.PositiveSmallIntegerField('Текущий пульс', null=True, default='0')
     list_of_pulse = [0]*5
-    sys_pressure = models.PositiveSmallIntegerField('Текущее систолическое давление', null=True, default='0')
     list_of_sys_pressure = [0]*5
-    dias_pressure = models.PositiveSmallIntegerField('Текущее диастолическое давление', null=True, default='0')
     list_of_dias_pressure = [0]*5
+
+    pulse = models.CharField('Пульс', max_length=50, default='0,0,0,0,0')
+    sys = models.CharField('Сис давление', max_length=50, default='0,0,0,0,0')
+    dias = models.CharField('Диаг давление', max_length=50, default='0,0,0,0,0')
