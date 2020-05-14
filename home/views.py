@@ -61,14 +61,23 @@ def logoutUser(request):
 
 @login_required(login_url='login')
 def personalcab(request):
-
     employee = request.user.employee
+    pulse = employee.pulse.split(',')
+    sys = employee.sys.split(',')
+    dias = employee.dias.split(',')
+
+    for i in range(0, len(pulse)):
+        employee.list_of_pulse[i] = int(pulse[i])
+
     x1_data = [1, 2, 3, 4, 5]
     y1_data = employee.list_of_pulse
     graph_pulse = plot([Scatter(x=x1_data, y=y1_data,
                                 mode='lines', name='test',
                                 opacity=0.8, marker_color='green')],
                        output_type='div')
+
+    for i in range(0, len(sys)):
+        employee.list_of_sys_pressure[i] = int(sys[i])
     
     x2_data = [1, 2, 3, 4, 5]
     y2_data = employee.list_of_sys_pressure
@@ -76,6 +85,9 @@ def personalcab(request):
                                      mode='lines', name='test',
                                      opacity=0.8, marker_color='green')],
                             output_type='div')
+
+    for i in range(0, len(dias)):
+        employee.list_of_dias_pressure[i] = int(dias[i])
 
     x3_data = [1, 2, 3, 4, 5]
     y3_data = employee.list_of_dias_pressure
@@ -110,26 +122,37 @@ def analyse(request):
 def getresults(request):
     if request.method == 'POST':
         employee = request.user.employee
-        if (request.POST.get('pulse') != ''):
-            employee.pulse = request.POST.get('pulse')
-        if (request.POST.get('sys') != ''):
-            employee.sys_pressure = request.POST.get('sys')
-        if (request.POST.get('dias') != ''):
-            employee.dias_pressure = request.POST.get('dias')
+        pulse = employee.pulse.split(',')
+        sys = employee.sys.split(',')
+        dias = employee.dias.split(',')
 
         for i in range(0, 4):
             if (request.POST.get('pulse') != ''):
-                employee.list_of_pulse[i] = employee.list_of_pulse[i + 1]
+                pulse[i] = pulse[i + 1]
             if (request.POST.get('sys') != ''):
-                employee.list_of_sys_pressure[i] = employee.list_of_sys_pressure[i + 1]
+                sys[i] = sys[i + 1]
             if (request.POST.get('dias') != ''):
-                employee.list_of_dias_pressure[i] = employee.list_of_dias_pressure[i + 1]
+                dias[i] = dias[i + 1]
+        
         if (request.POST.get('pulse') != ''):
-            employee.list_of_pulse[4] = employee.pulse
+            pulse[4] = str(request.POST.get('pulse'))
+            employee.pulse = ""
+            for i in range(0, 4):
+                employee.pulse += pulse[i] + ','
+            employee.pulse += pulse[4]
+            
         if (request.POST.get('sys') != ''):
-            employee.list_of_sys_pressure[4] = employee.sys_pressure
+            sys[4] = str(request.POST.get('sys'))
+            employee.sys = ""
+            for i in range(0, 4):
+                employee.sys += sys[i] + ','
+            employee.sys += sys[4]
+            
         if (request.POST.get('dias') != ''):
-            employee.list_of_dias_pressure[4] = employee.dias_pressure
-        employee.measurements_count += 1
+            dias[4] = str(request.POST.get('dias'))
+            employee.dias = ""
+            for i in range(0, 4):
+                employee.dias += dias[i] + ','
+            employee.dias += dias[4]
         employee.save()
     return render(request, 'results/result.html')
