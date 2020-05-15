@@ -64,12 +64,6 @@ def logoutUser(request):
 @login_required(login_url='login')
 def personalcab(request):
     employee = request.user.employee
-    pulse = employee.pulse.split(',')
-    sys = employee.sys.split(',')
-    dias = employee.dias.split(',')
-
-    for i in range(0, len(pulse)):
-        employee.list_of_pulse[i] = int(pulse[i])
 
     x1_data = [1, 2, 3, 4, 5]
     y1_data = employee.list_of_pulse
@@ -77,9 +71,6 @@ def personalcab(request):
                                 mode='lines', name='test',
                                 opacity=0.8, marker_color='green')],
                        output_type='div')
-
-    for i in range(0, len(sys)):
-        employee.list_of_sys_pressure[i] = int(sys[i])
     
     x2_data = [1, 2, 3, 4, 5]
     y2_data = employee.list_of_sys_pressure
@@ -87,9 +78,6 @@ def personalcab(request):
                                      mode='lines', name='test',
                                      opacity=0.8, marker_color='green')],
                             output_type='div')
-
-    for i in range(0, len(dias)):
-        employee.list_of_dias_pressure[i] = int(dias[i])
 
     x3_data = [1, 2, 3, 4, 5]
     y3_data = employee.list_of_dias_pressure
@@ -156,5 +144,15 @@ def getresults(request):
             for i in range(0, 4):
                 employee.dias += dias[i] + ','
             employee.dias += dias[4]
+
+        for i in range(0, len(pulse)):
+            employee.list_of_pulse[i] = int(pulse[i])
+
+        for i in range(0, len(sys)):
+            employee.list_of_sys_pressure[i] = int(sys[i])
+
+        for i in range(0, len(dias)):
+            employee.list_of_dias_pressure[i] = int(dias[i])
+
         employee.save()
     return render(request, 'results/result.html')
