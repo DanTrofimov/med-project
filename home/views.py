@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.template.context_processors import csrf
 from plotly.offline import plot
 from plotly.graph_objs import Scatter
+from .models import Employee
 
 @login_required(login_url='login')
 def home(request):
@@ -27,8 +28,9 @@ def registerPage(request):
         if request.method == 'POST':
             form = CreateUserForm(request.POST)
             if form.is_valid():
-                form.save()
+                userobj = form.save()
                 user = form.cleaned_data.get('username')
+                Employee.objects.create(user=userobj)
                 messages.success(request, 'Account was created for' + user)
                 return redirect('login')
 
