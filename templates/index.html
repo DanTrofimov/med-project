@@ -1,38 +1,51 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Medhouse</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
+    <link href="{% static "/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "/css/base.css" %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
+<style>
+    #hello_msg{
+        font-size: 18px;
+        color: #8A2BE2;
+        margin-right: 20px;
+    }
+</style>
+
+<div class="container-fluid">
+
 <div class="landing">
     <div class="page_header" id="page_header_index">
         <h2 class="logo" id="logo_index">MEDHOUSE</h2>
         <div class="h_nav_container">
-            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal" id="logo_index_enter">Войти</button>
-            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal" id="logo_index_reg">Регистрация</button>
+            <span id="hello_msg">Привет, {{ request.user }}  </span>
+            <span ><a id="hello_msg" href="{% url 'logout' %}">Выход</a> </span>
+{#            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal" id="logo_index_enter">Войти</button>#}
+{#            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal" id="logo_index_reg">Регистрация</button>#}
         </div>
     </div>
     <div class="page_navigator">
         <div class="nav-items">
             <div class="nav-item">
-                <a href="index.html" class="link active">
+                <a href="{% url 'home' %}" class="link active">
                     Главная
                 </a>
                 <span class="nav-active"></span>
             </div>
             <div class="nav-item">
-                <a href="analyse.html" class="link">
-                    Анализ
+                <a href="personal-cab-3.html" class="link">
+                    Личный кабинет
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="news.html" class="link">
+                <a href="{% url 'news' %}" class="link">
                     Новости
                 </a>
                 <span class="nav-active d-none"></span>
@@ -42,7 +55,7 @@
     <div class="mt-2">
         <div class="about-us_container">
             <div class="desc_container">
-                <img src="../assets/doc.png" class="img landing_img doc_image">
+                <img src="{% static "/assets/doc.png" %}" class="img landing_img doc_image">
                 <p class="main-title">ЗДОРОВЬЕ - это самое драгоценное сокровище, которое вместе с прекрасным даром жизни предлагается нам совершенно бесплатно. Как же важно сохранить и приумножить его </p>
             </div>
         </div>
@@ -57,12 +70,12 @@
             <div class="cards-container">
                 <div class="card border-0">
                     <div class="card-img-top">
-                        <img src="../assets/asset1.jpg" class="card-img">
+                        <img src="{% static "assets/asset1.jpg" %}" class="card-img">
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Проверьте свое давление</h5>
+                        <h5 class="card-title">Проверьте свое здоровье</h5>
                         <p class="card-text">
-                            С помощью нашего сервиса Вы можете проверить состояние артериального давления, получить достоверные советы по поводу дальнейшего поведения и даже варианты лечения без походов к врачам с выстаиванием в долгих очередях
+                            С помощью нашего сервиса Вы можете проверить состояние своего здоровья, получить достоверные советы по поводу дальнейшего поведения и даже варианты лечения без походов к врачам с выстаиванием в долгих очередях
                         </p>
                     </div>
                     <div class="p-3">
@@ -71,7 +84,7 @@
                 </div>
                 <div class="card border-0">
                     <div class="card-img-top">
-                        <img src="../assets/asset1.jpg" class="card-img">
+                        <img src="{% static "/assets/asset1.jpg" %}" class="card-img">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Следите за новостями</h5>
@@ -85,7 +98,7 @@
                 </div>
                 <div class="card border-0">
                     <div class="card-img-top">
-                        <img src="../assets/asset1.jpg" class="card-img">
+                        <img src="{% static "/assets/asset1.jpg" %}" class="card-img">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">На связи</h5>
@@ -108,12 +121,12 @@
                 </div>
             </div>
             <div>
-                <h5 class="text-white font-weight-bold">Контакты</h5>
-                <div class="flex-column">
-                    <a href="#" class="d-block">Вконтакте</a>
-                    <a href="#" class="d-block">Facebook</a>
-                    <a href="#" class="d-block">Instagram</a>
-                </div>
+{#                <h5 class="text-white font-weight-bold">Контакты</h5>#}
+{#                <div class="flex-column">#}
+{#                    <a href="#" class="d-block">Вконтакте</a>#}
+{#                    <a href="#" class="d-block">Facebook</a>#}
+{#                    <a href="#" class="d-block">Instagram</a>#}
+{#                </div>#}
             </div>
             <div>
                 <h5 class="text-white font-weight-bold">Адрес</h5>
@@ -165,14 +178,9 @@
                 </button>
             </div>
             <div class="modal-body pt-0 pb-0">
-                <div class="form-group">
-                    <label class="lbl">Имя</label>
-                    <input type="text" class="form-control form-input username">
-                    <span class="msg-err d-none">Поле не может быть пустым</span>
-                </div>
-                <div class="form-group">
-                    <label class="lbl">Фамилия</label>
-                    <input type="text" class="form-control form-input username">
+                <div class="input-group">
+                    <label class="lbl">Логин</label>
+                    <input type="text" class="form-control form-input username" id="id_username">
                     <span class="msg-err d-none">Поле не может быть пустым</span>
                 </div>
                 <div class="form-group">
@@ -198,8 +206,11 @@
     </div>
 </div>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
+</div>
+
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+{#<script src="{% static "js/index.js" %}"></script>#}
+{#check#}
 </body>
 </html>

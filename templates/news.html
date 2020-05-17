@@ -1,32 +1,50 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Новости</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
+    <link href="{% static "/css/bootstrap.min.css"%} " rel="stylesheet">
+    <link href="{% static "/css/base.css"%}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<style>
+    #hello_msg{
+        font-size: 18px;
+        color: #8A2BE2;
+        margin-right: 20px;
+    }
+</style>
+
+<style>
+    #logout_link{
+        colo
+    }
+</style>
+
 <div class="default">
     <div class="page_header">
         <h2 class="logo">MEDHOUSE</h2>
         <div class="h_nav_container">
-            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>
-            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>
+              <span id="hello_msg">Привет , {{ request.user }}  </span>
+              <span ><a id="hello_msg" href="{% url 'logout' %}">Выход</a> </span>
+{#            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>#}
+{#            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>#}
         </div>
     </div>
     <div class="page_navigator">
         <div class="nav-items">
             <div class="nav-item">
-                <a href="index.html" class="link">
+                <a href="../" class="link">
                     Главная
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="analyse.html" class="link">
-                    Анализ
+                <a href="personal-cab-3.html" class="link">
+                    Личный кабинет
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
@@ -42,7 +60,7 @@
         <div class="news-container">
             <div class="news-item card">
                 <div class="news-item__img-wrapper">
-                    <img class="news-item__img img" src="../assets/news-hyper.jpg">
+                    <img class="news-item__img img" src="{% static "/assets/news-hyper.jpg"%}">
                 </div>
                 <div class="news-item__content">
                     <h4 class="font-weight-bold news-title"><a href="#" class="link">10 мифов о гипертонической болезни</a></h4>
@@ -55,7 +73,7 @@
             </div>
             <div class="news-item card">
                 <div class="news-item__img-wrapper">
-                    <img class="news-item__img img" src="../assets/images.jpeg">
+                    <img class="news-item__img img" src="{% static "/assets/images.jpeg"%} ">
                 </div>
                 <div class="news-item__content">
                     <h4 class="font-weight-bold news-title"><a href="#" class="link">Прорыв в лечении гепертонии</a></h4>
@@ -69,7 +87,7 @@
             </div>
             <div class="news-item card">
                 <div class="news-item__img-wrapper">
-                    <img class="news-item__img img" src="../assets/news.jpg">
+                    <img class="news-item__img img" src="{% static "/assets/news.jpg"%} ">
                 </div>
                 <div class="news-item__content">
                     <h4 class="font-weight-bold news-title"><a href="#" class="link">Новость 3</a> </h4>
@@ -115,12 +133,12 @@
                 </div>
             </div>
             <div>
-                <h5 class="text-white font-weight-bold">Контакты</h5>
-                <div class="flex-column">
-                    <a href="#" class="d-block">Вконтакте</a>
-                    <a href="#" class="d-block">Facebook</a>
-                    <a href="#" class="d-block">Instagram</a>
-                </div>
+{#                <h5 class="text-white font-weight-bold">Контакты</h5>#}
+{#                <div class="flex-column">#}
+{#                    <a href="#" class="d-block">Вконтакте</a>#}
+{#                    <a href="#" class="d-block">Facebook</a>#}
+{#                    <a href="#" class="d-block">Instagram</a>#}
+{#                </div>#}
             </div>
             <div>
                 <h5 class="text-white font-weight-bold">Адрес</h5>
@@ -203,8 +221,8 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/index.js" %}"></script>
 </body>
 </html>

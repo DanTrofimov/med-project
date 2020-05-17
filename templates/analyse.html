@@ -1,60 +1,162 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/base.css" rel="stylesheet">
+    <title>Medhouse - анализ</title>
+    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    <link href="{% static "/css/base.css"%}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/analys-styles.css"%} ">
 </head>
+<style>
+    #hello_msg{
+        font-size: 18px;
+        color: #8A2BE2;
+        margin-right: 20px;
+    }
+</style>
 <body>
 <div class="default">
     <div class="page_header">
         <h2 class="logo">MEDHOUSE</h2>
         <div class="h_nav_container">
-            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>
-            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>
+              <span id="hello_msg">Привет, {{ request.user }}  </span>
+              <span ><a id="hello_msg" href="{% url 'logout' %}">Выход</a> </span>
+{#            <button class="btn btn-main btn-border-violet mr-2" data-toggle="modal" data-target="#signinmodal">Войти</button>#}
+{#            <button class="btn btn-main btn-border-violet" data-toggle="modal" data-target="#signupmodal">Регистрация</button>#}
         </div>
     </div>
     <div class="page_navigator">
         <div class="nav-items">
             <div class="nav-item">
-                <a href="index.html" class="link">
-                    Главная
+                <a href="{% url 'home' %}" class="link">
+                    главная
                 </a>
                 <span class="nav-active d-none"></span>
             </div>
             <div class="nav-item">
-                <a href="analyse.html" class="link active">
-                    Анализ
+                <a href="{% url 'personalcab' %}" class="link">
+                    профиль
+                </a>
+                <span class="nav-active d-none"></span>
+            </div>
+            <div class="nav-item">
+                <a href="{% url 'analyse' %}" class="link active">
+                    анализ
                 </a>
                 <span class="nav-active"></span>
             </div>
-            <div class="nav-item">
-                <a href="news.html" class="link">
-                    Новости
-                </a>
-                <span class="nav-active d-none"></span>
-            </div>
         </div>
     </div>
-    <div class="container">
-        <div class="analyse_form mt-5">
-            <div class="animation">
-                <canvas height="150" width="1000" id="example">Обновите браузер</canvas>
+        <div class="container">
+
+                        <!--        ATTENTION onsubmit="return false;"  !!!-->
+            <form method="POST" action="result.html">
+                {% csrf_token %}
+                <div class="analyse_form mt-5">
+                    <!--<div class="animation">-->
+                    <!--<canvas height="150" width="1000" id="example">Обновите браузер</canvas>-->
+                    <!--</div>-->
+                <div><h3 class="text-center font-weight-bold" style="padding-bottom: 20px">{{user.username}}, введите ваши показания:</h3></div>
+                <div class="analyze_item_container" style="margin-top: 20px">
+                    <span class="item-title">Курение:</span>
+                    <input type="text" value="{{ user.employee.isSmoking }}" placeholder="выберите" list="optionsSmoke" class="form-control form-input item-control radio-inline" id="smoking" name="smoking">
+                    <datalist id="optionsSmoke">
+                        <option>Да</option>
+                        <option>Нет</option>
+                    </datalist>
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Стаж курения:</span>
+                    <input type="number" placeholder="в годах" class="form-control form-input item-control" id="smoking-exp" name="smoking-exp">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Введите ваш вес:</span>
+                    <input type="number" value="{{ user.employee.weight }}" placeholder="кг" class="form-control form-input item-control" id="weight" name="weight">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Введите ваш рост:</span>
+                    <input type="number" value="{{ user.employee.height }}"placeholder="cм" class="form-control form-input item-control" id="height" name="height">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Употребление алкоголя:</span>
+                    <input type="text" list="optionsAlc" placeholder="выберите" class="form-control form-input item-control" id="alco" name="alco">
+                    <datalist id="optionsAlc">
+                        <option>Полный отказ</option>
+                        <option>Несколько раз в год</option>
+                        <option>Каждый месяц</option>
+                        <option>Каждую неделю</option>
+                        <option>Ежедневно</option>
+                    </datalist>
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Систолическое давление:</span>
+                    <input type="number" placeholder="мм рт.ст." class="form-control form-input item-control" id="sistol-presure" name="sys">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Диастолическое давление:</span>
+                    <input type="number" placeholder="мм рт.ст." class="form-control form-input item-control" id="diast-presure" name="dias">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Температура:</span>
+                    <input type="number" placeholder="°C" step="0.1" class="form-control form-input item-control" id="temperature" name="temperature">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Пульс:</span>
+                    <input type="number" placeholder="уд. мин." class="form-control form-input item-control" id="pulse" name="pulse">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Сахар:</span>
+                    <input type="number" placeholder="ммоль/л" step="0.1" class="form-control form-input item-control" id="sugar" name="sugar">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Холестерин:</span>
+                    <input type="number" placeholder="ммоль/л" step="0.01" class="form-control form-input item-control" id="holest" name="holest">
+                </div>
+                <div class="analyze_item_container">
+                    <span class="item-title">Сон:</span>
+                    <input type="number" placeholder="в часах" class="form-control form-input item-control" id="sleep" name="sleep">
+                </div>
+                <div class="analyze_item_container_scroll">
+                    <span class="item-title">Оцените ваш повседневный стресс:</span>
+                    <input type="range" list="optionsScroll" min="1" max="10" class="form-control form-input item-control" id="stress" name="stress">
+                    <datalist id="optionsScroll">
+                        <option value="1" label="1">
+                        <option value="2" label="2">
+                        <option value="3" label="3">
+                        <option value="4" label="4">
+                        <option value="5" label="5">
+                        <option value="6" label="6" >
+                        <option value="7" label="7">
+                        <option value="8" label="8">
+                        <option value="9" label="9">
+                        <option value="10" label="10">
+                    </datalist>
+                </div>
+                <div class="analyze_item_container_scroll">
+                    <span class="item-title">Оцените вашу физ. нагрузку:</span>
+                    <input type="range" list="optionsScroll" min="1" max="10" class="form-control form-input item-control" id="phis" name="phis">
+                    <datalist id="optionsScroll">
+                    <option value="1" label="1">
+                    <option value="2" label="2">
+                    <option value="3" label="3">
+                    <option value="4" label="4">
+                    <option value="5" label="5">
+                    <option value="6" label="6" >
+                    <option value="7" label="7">
+                    <option value="8" label="8">
+                    <option value="9" label="9">
+                    <option value="10" label="10">  //onClick="window.location='personal-cab-3-changedata.html'
+                </datalist>
+                </div>
+                <!--result-->
+                <button class="btn btn-main btn-border-violet mt-4 w-100" id="result-button" onClick="window.location='result.html'">Показать рекомендации</button>
             </div>
-            <h3 class="text-center font-weight-bold">Введите ваше давление</h3>
-            <div class="analyze_item_container">
-                <span class="item-title">Систолическое давление:</span>
-                <input type="number" class="form-control form-input item-control" id="sistol-presure" name="sys">
-            </div>
-            <div class="analyze_item_container">
-                <span class="item-title">Диастолическое давление:</span>
-                <input type="number" class="form-control form-input item-control" name="dias">
-            </div>
-            <button class="btn btn-main btn-border-violet mt-4 w-100" id="result-button">Результат</button>
-        </div>
+        </form>
     </div>
+
+
     <div class="page_footer pd-section" style="margin-top: 150px">
         <div class="desc_container align-items-start">
             <div>
@@ -66,12 +168,12 @@
                 </div>
             </div>
             <div>
-                <h5 class="text-white font-weight-bold">Контакты</h5>
-                <div class="flex-column">
-                    <a href="#" class="d-block">Вконтакте</a>
-                    <a href="#" class="d-block">Facebook</a>
-                    <a href="#" class="d-block">Instagram</a>
-                </div>
+{#                <h5 class="text-white font-weight-bold">Контакты</h5>#}
+{#                <div class="flex-column">#}
+{#                    <a href="#" class="d-block">Вконтакте</a>#}
+{#                    <a href="#" class="d-block">Facebook</a>#}
+{#                    <a href="#" class="d-block">Instagram</a>#}
+{#                </div>#}
             </div>
             <div>
                 <h5 class="text-white font-weight-bold">Адрес</h5>
@@ -156,8 +258,9 @@
     </div>
 </div>
 
-<script src="../js/jquery.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/index.js"></script>
+<script src="{% static "js/jquery.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<!--<script src="../js/index.js"></script>-->
+<script src="{% static "js/analys.js" %}"></script>
 </body>
 </html>
