@@ -3,6 +3,11 @@ from django import forms
 from django.contrib.auth.models import User
 from .models import *
 
+my_default_errors = {
+    'required': 'This field is required',
+    'invalid': 'Enter a valid value'
+}
+
 class CreateUserForm(UserCreationForm):
 
     class Meta:
