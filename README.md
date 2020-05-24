@@ -11,5 +11,5 @@ Here you can:
 
 <img src="https://github.com/chackydude/med-project/raw/master/images/login.png" width="420px" height="230px">  <img src="https://github.com/chackydude/med-project/raw/master/images/logup.png" width="420px" height="230px">
 <img src="https://github.com/chackydude/med-project/raw/master/images/cab.png">
-<img src="https://github.com/chackydude/med-project/raw/master/images/graphs.png">
-<img src="https://github.com/chackydude/med-project/raw/master/images/analys.png">
+
+<p>Graphs and analysis pages</p> <img src="https://github.com/chackydude/med-project/raw/master/images/graphs.png"> <img src="https://github.com/chackydude/med-project/raw/master/images/analys.png">
