@@ -29,7 +29,7 @@ Frontend:
 Bacckend Team:
 - [Azat Gilyazov](https://github.com/AnteeOne)
 - [Niaz Aminov](https://github.com/SomebodyFromSomewhere)
-- [Kirill Svidirov] (https://github.com/OneWayDream)
+- [Kirill Svidirov](https://github.com/OneWayDream)
 
 Frontend team:
 
