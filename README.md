@@ -26,3 +26,13 @@ Frontend:
 - Bootstrap
 - jQuery
 ## Special thanks
+Bacckend Team:
+- [Azat Gilyazov](https://github.com/AnteeOne)
+- [Niaz Aminov](https://github.com/SomebodyFromSomewhere)
+- [Kirill Svidirov] (https://github.com/OneWayDream)
+
+Frontend team:
+
+- me
+- [Roman Leontyev](https://github.com/Romo4ka-bot)
+- Allaguly Ahmedow
