@@ -20,6 +20,7 @@ Here you can:
 Backend:
 - Python Django
 - SQLite
+
 Frontend:
 - JS, CSS, HTML
 - Bootstrap
