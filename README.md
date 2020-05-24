@@ -7,6 +7,8 @@ Here you can:
  - treatment recommendations
 <img src="https://github.com/chackydude/med-project/raw/master/images/main.png">
 ## Examples of pages
+
+
 <img src="https://github.com/chackydude/med-project/raw/master/images/login.png" width="690px" height="390px">  <img src="https://github.com/chackydude/med-project/raw/master/images/logup.png" width="690px" height="390px">
 <img src="https://github.com/chackydude/med-project/raw/master/images/cab.png">
 <img src="https://github.com/chackydude/med-project/raw/master/images/graphs.png">
