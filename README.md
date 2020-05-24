@@ -6,10 +6,10 @@ Here you can:
  - monitor your testimonies
  - treatment recommendations
 <img src="https://github.com/chackydude/med-project/raw/master/images/main.png">
+
 ## Examples of pages
 
-
-<img src="https://github.com/chackydude/med-project/raw/master/images/login.png" width="345px" height="195px">  <img src="https://github.com/chackydude/med-project/raw/master/images/logup.png" width="345px" height="195px">
+<img src="https://github.com/chackydude/med-project/raw/master/images/login.png" width="586px" height="330px">  <img src="https://github.com/chackydude/med-project/raw/master/images/logup.png" width="586px" height="330px">
 <img src="https://github.com/chackydude/med-project/raw/master/images/cab.png">
 <img src="https://github.com/chackydude/med-project/raw/master/images/graphs.png">
 <img src="https://github.com/chackydude/med-project/raw/master/images/analys.png">
