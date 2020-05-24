@@ -15,3 +15,13 @@ Here you can:
 <img src="https://github.com/chackydude/med-project/raw/master/images/graphs.png">
 <img src="https://github.com/chackydude/med-project/raw/master/images/analys.png">
 </p>
+
+## Stack of technologies
+Backend:
+- Python Django
+- SQLite
+Frontend:
+- JS, CSS, HTML
+- Bootstrap
+- jQuery
+## Special thanks
