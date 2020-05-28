@@ -33,6 +33,6 @@ Backend Team:
 
 Frontend Team:
 
-- me
+- [Trofimov Danil] (https://github.com/chackydude)
 - [Roman Leontyev](https://github.com/Romo4ka-bot)
-- Allaguly Ahmedow
+- [Allaguly Ahmedow](https://github.com/aallaguly01)
